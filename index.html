@@ -730,8 +730,8 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   padding:clamp(8px,1.6vw,1.1rem) clamp(1.25rem,3.2vw,3.2rem) clamp(1.6rem,3.4vw,2.8rem);
   display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,5vw,2.4rem);align-items:center}
 @media (min-width:960px){
-  .olist-feat-band{grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    column-gap:clamp(3.2rem,9vw,7.5rem);row-gap:0;align-items:center}
+  .olist-feat-band{grid-template-columns:minmax(15rem,0.9fr) minmax(18rem,1.2fr);
+    column-gap:clamp(2rem,5.5vw,4.5rem);row-gap:0;align-items:center}
 }
 .olist-feat-cards{display:grid;gap:1rem;min-width:0;width:100%;max-width:32rem;justify-self:start}
 .olist-feat-card{margin:0;color:#fff;font-weight:600;letter-spacing:-.015em;line-height:1.5;
@@ -745,36 +745,14 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
   .olist-feat-card{background:rgba(6,20,79,.46);border-color:rgba(255,255,255,.32)}
 }
-.olist-feat-partner{display:flex;flex-direction:column;align-items:center;text-align:center;
-  gap:.55rem;min-width:0;justify-self:center;width:100%;max-width:36rem}
-.olist-feat-partner-head{position:relative;display:flex;flex-direction:row;align-items:center;justify-content:center;
-  gap:.7rem;width:auto;max-width:100%;min-width:0;z-index:0;
-  padding:.42rem .85rem .42rem .55rem;border-radius:999px;
-  background:rgba(6,20,79,.32);border:1px solid rgba(255,255,255,.16);
-  -webkit-backdrop-filter:blur(8px) saturate(120%);backdrop-filter:blur(8px) saturate(120%);
-  box-shadow:0 8px 20px -12px rgba(6,20,79,.45)}
-.olist-feat-partner-head::before{content:none;display:none}
-.olist-feat-partner-mark{flex:none;display:block;
-  --olist-mark-h:clamp(36px,3.15vw,48px);
-  height:var(--olist-mark-h);width:calc(var(--olist-mark-h)*2456/2830);
-  background-color:#fff;
-  -webkit-mask-image:url("brand/cubo_atlas.png");mask-image:url("brand/cubo_atlas.png");
-  -webkit-mask-size:contain;mask-size:contain;
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-  -webkit-mask-position:center;mask-position:center}
-.olist-feat-partner-copy{display:flex;flex-direction:column;align-items:flex-start;text-align:left;
-  gap:.12em;min-width:0}
-.olist-feat-partner-kicker{margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);line-height:1.3;
-  text-shadow:0 1px 14px rgba(6,20,79,.45)}
-.olist-feat-partner-line{margin:0;font-size:clamp(16px,1.45vw,20px);font-weight:700;
-  letter-spacing:-.02em;color:#fff;line-height:1.25;
-  text-shadow:0 1px 16px rgba(6,20,79,.5)}
-.olist-feat-seal{margin:0;width:100%;max-width:100%;background:none;
-  padding:0;overflow:visible;line-height:0}
-.olist-feat-seal img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.olist-feat-partner{display:flex;align-items:center;justify-content:center;
+  min-width:0;width:100%;max-width:min(100%,38rem);background:none;border:0;box-shadow:none}
+.olist-feat-seal{margin:0;width:100%;max-width:100%;background:none;border:0;padding:0;
+  overflow:visible;line-height:0;box-shadow:none}
+.olist-feat-seal img{display:block;width:100%;height:auto;max-width:100%;
+  object-fit:contain;object-position:center;background:none;border:0}
 @media (min-width:960px){
-  .olist-feat-partner{justify-self:end;align-items:center;text-align:center}
+  .olist-feat-partner{justify-self:end}
 }
 @media (max-width:959px){
   .olist-feat-cards,.olist-feat-partner,.olist-feat-seal{max-width:min(100%,460px);width:100%;margin-inline:auto}
@@ -1854,15 +1832,8 @@ body.pre-active{overflow:hidden}
           <p class="olist-feat-card">Para que seu sistema funcione com segurança e seu time tenha autonomia.</p>
         </div>
         <div class="olist-feat-partner">
-          <div class="olist-feat-partner-head">
-            <span class="olist-feat-partner-mark" aria-hidden="true"></span>
-            <div class="olist-feat-partner-copy">
-              <p class="olist-feat-partner-kicker">Consultoria certificada</p>
-              <p class="olist-feat-partner-line">Somos parceiros diamante</p>
-            </div>
-          </div>
           <figure class="olist-feat-seal">
-            <img src="brand/seloolist.webp" alt="Selo Olist parceria diamante 5x" width="961" height="444">
+            <img src="brand/parceirodiamante.png" alt="Consultoria certificada Atlas, parceiro diamante Olist" width="1724" height="600">
           </figure>
         </div>
       </div>
