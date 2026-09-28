@@ -1733,6 +1733,36 @@ body.pre-active{overflow:hidden}
 .wa-float:hover{background:#1EBE5A;box-shadow:0 10px 24px -6px rgba(6,20,79,.42),0 2px 8px rgba(6,20,79,.16)}
 .wa-float:focus-visible{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px #004EF4}
 .wa-float svg{width:28px;height:28px;display:block}
+
+/* ====================== Cookie consent ====================== */
+.cookie-banner{position:fixed;z-index:88;left:16px;right:16px;
+  bottom:calc(84px + env(safe-area-inset-bottom,0px));
+  display:flex;flex-direction:column;gap:14px;padding:18px 18px 16px;
+  background:#fff;color:var(--atlas-navy);border-radius:20px;border:1px solid rgba(6,20,79,.08);
+  box-shadow:0 18px 44px -14px rgba(6,20,79,.32),0 4px 14px rgba(6,20,79,.08);
+  animation:cookieIn .45s var(--ease) both}
+.cookie-banner[hidden]{display:none}
+.cookie-text{margin:0;font-size:14.5px;line-height:1.5;color:var(--atlas-navy)}
+.cookie-actions{display:flex;gap:10px}
+.cookie-btn{flex:1 1 0;min-height:44px;padding:0 22px;border-radius:999px;font:inherit;font-size:15px;font-weight:500;
+  cursor:pointer;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.cookie-btn--ghost{background:#fff;color:var(--atlas-navy);border:1px solid rgba(6,20,79,.25)}
+.cookie-btn--ghost:hover{border-color:var(--atlas-navy);background:#F4F7FB}
+.cookie-btn--accept{background:#004EF4;color:#fff;border:1px solid #004EF4}
+.cookie-btn--accept:hover{background:var(--atlas-navy);border-color:var(--atlas-navy)}
+.cookie-btn:focus-visible{outline:2px solid #004EF4;outline-offset:3px}
+@keyframes cookieIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (min-width:768px){
+  .cookie-banner{left:50%;right:auto;bottom:calc(28px + env(safe-area-inset-bottom,0px));
+    width:min(760px,calc(100% - 216px));transform:translateX(-50%);
+    flex-direction:row;align-items:center;gap:24px;padding:16px 16px 16px 24px;
+    animation-name:cookieInCentered}
+  .cookie-text{flex:1 1 auto}
+  .cookie-actions{flex:none}
+  .cookie-btn{flex:none}
+}
+@keyframes cookieInCentered{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cookie-banner{animation:none}}
 @media (min-width:768px){
   .wa-float{right:calc(28px + env(safe-area-inset-right,0px));bottom:calc(28px + env(safe-area-inset-bottom,0px));width:58px;height:58px}
   .wa-float svg{width:31px;height:31px}
@@ -1740,6 +1770,15 @@ body.pre-active{overflow:hidden}
 </style>
 </head>
 <body class="pre-active">
+
+<!-- ============ Cookie consent ============ -->
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
+  <p class="cookie-text">Usamos cookies essenciais para o site funcionar e, com a sua autorização, cookies de análise para medir audiência.</p>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn cookie-btn--ghost" data-consent-choice="declined">Recusar</button>
+    <button type="button" class="cookie-btn cookie-btn--accept" data-consent-choice="accepted">Aceitar</button>
+  </div>
+</div>
 
 <!-- ============ Preloader ============ -->
 <div class="preloader" id="preloader" aria-hidden="true">
@@ -4236,6 +4275,40 @@ body.pre-active{overflow:hidden}
   initAmbientLights();
   initFooterScene();
 
+})();
+</script>
+<script>
+/* Analytics tags must be added as <script type="text/plain" data-consent="analytics" (src|data-src)=...>
+   so they only execute after the visitor accepts. */
+(function(){
+  var KEY="atlas-cookie-consent";
+  var banner=document.getElementById("cookieBanner");
+  function read(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function save(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+  function loadAnalytics(){
+    var tags=document.querySelectorAll('script[type="text/plain"][data-consent="analytics"]');
+    Array.prototype.forEach.call(tags,function(old){
+      var s=document.createElement("script");
+      Array.prototype.forEach.call(old.attributes,function(a){
+        if(a.name!=="type"&&a.name!=="data-consent"&&a.name!=="data-src") s.setAttribute(a.name,a.value);
+      });
+      var src=old.getAttribute("data-src");
+      if(src) s.src=src; else if(!old.src) s.text=old.text;
+      old.parentNode.replaceChild(s,old);
+    });
+  }
+  var choice=read();
+  if(choice==="accepted") loadAnalytics();
+  if(!banner||choice==="accepted"||choice==="declined") return;
+  banner.hidden=false;
+  banner.addEventListener("click",function(e){
+    var btn=e.target.closest("[data-consent-choice]");
+    if(!btn) return;
+    var v=btn.getAttribute("data-consent-choice");
+    save(v);
+    banner.hidden=true;
+    if(v==="accepted") loadAnalytics();
+  });
 })();
 </script>
 <a class="wa-float" href="https://wa.me/553185118837" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
