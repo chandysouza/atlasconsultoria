@@ -79,7 +79,7 @@ button{font-family:inherit;cursor:pointer}
 
 /* ====================== Buttons ====================== */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-  border-radius:9999px;padding:.85rem 1.6rem;font-size:.9rem;font-weight:500;
+  border-radius:9999px;padding:.935rem 1.76rem;font-size:.99rem;font-weight:500;
   border:1px solid transparent;line-height:1;transition:transform .25s var(--ease),
   background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
 .btn:hover{transform:translateY(-2px)}
@@ -88,7 +88,7 @@ button{font-family:inherit;cursor:pointer}
 .btn-primary{background:linear-gradient(135deg,var(--atlas-cyan),var(--atlas-blue));color:#fff;
   box-shadow:0 12px 30px -10px rgba(8,169,230,.6),inset 0 0 0 1px rgba(255,255,255,.12)}
 .btn-primary:hover{box-shadow:0 18px 44px -10px rgba(8,169,230,.75),inset 0 0 0 1px rgba(255,255,255,.22)}
-.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.btn-ghost{padding:.85rem 1.6rem;font-size:.9rem;background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.35);backdrop-filter:blur(6px)}
 .btn-ghost:hover{border-color:var(--atlas-cyan);color:#fff;background:rgba(8,169,230,.12)}
 .btn-dark{background:var(--atlas-navy);color:#fff}
 .btn-dark:hover{background:var(--atlas-blue)}
@@ -254,7 +254,7 @@ html{scroll-padding-top:74px}
 .section.seam-in{padding-top:calc(6rem + var(--seam-r))}
 .footer.seam-in{padding-top:0}
 .svc-block.seam,.svc-block.seam-in{overflow:visible}
-#implementacao-olist{--seam-z:20}#territorio{--seam-z:19}#beneficio{--seam-z:18}#acompanhamento{--seam-z:17}
+#implementacao-olist{--seam-z:20}#territorio{--seam-z:19}#acompanhamento{--seam-z:18}#beneficio{--seam-z:17}
 #contato{--seam-z:6}#rodape{--seam-z:5}
 .container{max-width:1240px;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:500;
@@ -384,16 +384,16 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .hero-inner{max-width:min(540px,92vw);text-align:left}
 @media (max-width:1023px){.hero-inner{order:1}.hero-visual{order:2}}
 .hero .eyebrow{color:var(--atlas-teal);letter-spacing:.18em;font-weight:500}
-.h1{margin-top:.85rem;font-family:"Urania",Arial,sans-serif;font-weight:700;font-size:clamp(28px,7.6vw,36px);
+.h1{margin-top:0;font-family:"Urania",Arial,sans-serif;font-weight:700;font-size:clamp(28px,7.6vw,36px);
   line-height:1.06;letter-spacing:-.018em;color:#fff;max-width:17ch;text-wrap:balance}
 @media (min-width:768px){.h1{font-size:clamp(36px,4.8vw,46px);line-height:1.04;max-width:20ch}}
 @media (min-width:1024px){.h1{font-size:clamp(2.6rem,3.6vw,3.6rem);line-height:1.02;letter-spacing:-.02em;max-width:none}}
 .hero-sub{margin-top:1.1rem;max-width:min(500px,100%);font-family:"Urania",Arial,sans-serif;font-weight:400;
   font-size:clamp(16px,1.35vw,19px);line-height:1.55;color:rgba(255,255,255,.86)}
 .hero-actions{margin-top:1.5rem;display:flex;align-items:center}
-.hero-actions .btn-primary{min-height:52px;padding:0 26px;font-size:15.5px;font-weight:500;border-radius:999px;width:auto}
+.hero-actions .btn-primary{min-height:57px;padding:0 29px;font-size:17px;font-weight:500;border-radius:999px;width:auto}
 @media (min-width:1024px){.hero-actions{margin-top:1.75rem}
-  .hero-actions .btn-primary{min-height:56px;padding:0 32px;font-size:17px}}
+  .hero-actions .btn-primary{min-height:62px;padding:0 35px;font-size:18.5px}}
 .hero-cta{position:relative;isolation:isolate;overflow:visible;z-index:1}
 .hero-cta > *{position:relative;z-index:2}
 .hero-cta::before,.hero-cta::after{
@@ -436,35 +436,35 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   transform-origin:center center;will-change:transform,opacity}
 .hero-brand[data-brand="olist"]{--bs:150px;--bx:24%;--by:11%}
 .hero-brand[data-brand="ml"]{--bs:150px;--bx:86%;--by:14%}
-.hero-brand[data-brand="shopify"]{--bs:144px;--bx:55%;--by:2%}
-@media (min-width:1280px) and (max-height:760px){.hero-brand[data-brand="shopify"]{--by:7%}}
+.hero-brand[data-brand="tiktok"]{--bs:144px;--bx:55%;--by:2%}
+@media (min-width:1280px) and (max-height:760px){.hero-brand[data-brand="tiktok"]{--by:7%}}
 .hero-brand[data-brand="shopee"]{--bs:144px;--bx:calc(102% - 34px);--by:45%}
-.hero-brand[data-brand="amazon"]{--bs:112px;--bx:78%;--by:87%}
-.hero-brand[data-brand="tiktok"]{--bs:138px;--bx:18%;--by:88%}
-.hero-brand[data-brand="base"]{--bs:124px;--bx:5%;--by:53%}
+.hero-brand[data-brand="amazon"]{--bs:144px;--bx:78%;--by:87%}
+.hero-brand[data-brand="shopify"]{--bs:138px;--bx:18%;--by:88%}
+.hero-brand[data-brand="base"]{--bs:144px;--bx:5%;--by:53%}
 @media (max-width:1279px){
   .hero-brand[data-brand="olist"]{--bs:126px;--bx:22%;--by:11%}
   .hero-brand[data-brand="ml"]{--bs:126px;--bx:80%;--by:16%}
-  .hero-brand[data-brand="shopify"]{--bs:104px;--bx:52%;--by:-8%}
+  .hero-brand[data-brand="tiktok"]{--bs:104px;--bx:52%;--by:-8%}
   .hero-brand[data-brand="shopee"]{--bs:116px;--bx:calc(91% - 28px);--by:46%}
-  .hero-brand[data-brand="amazon"]{--bs:102px;--bx:80%;--by:87%}
-  .hero-brand[data-brand="tiktok"]{--bs:114px;--bx:22%;--by:85%}
-  .hero-brand[data-brand="base"]{--bs:110px;--bx:8%;--by:50%}
+  .hero-brand[data-brand="amazon"]{--bs:116px;--bx:80%;--by:87%}
+  .hero-brand[data-brand="shopify"]{--bs:114px;--bx:22%;--by:85%}
+  .hero-brand[data-brand="base"]{--bs:116px;--bx:8%;--by:50%}
 }
 @media (max-width:1023px){
   .hero-brand[data-brand="olist"],
   .hero-brand[data-brand="ml"],
-  .hero-brand[data-brand="shopify"]{display:none}
+  .hero-brand[data-brand="tiktok"]{display:none}
   .hero-brand[data-brand="shopee"]{--bs:92px;--bx:89%;--by:41%}
-  .hero-brand[data-brand="amazon"]{--bs:84px;--bx:78%;--by:88%}
-  .hero-brand[data-brand="tiktok"]{--bs:90px;--bx:24%;--by:86%}
-  .hero-brand[data-brand="base"]{--bs:86px;--bx:8%;--by:46%}
+  .hero-brand[data-brand="amazon"]{--bs:90px;--bx:78%;--by:88%}
+  .hero-brand[data-brand="shopify"]{--bs:90px;--bx:24%;--by:86%}
+  .hero-brand[data-brand="base"]{--bs:90px;--bx:8%;--by:46%}
 }
 @media (max-width:640px){
   .hero-brand[data-brand="shopee"]{--bs:76px;--bx:87%;--by:39%}
-  .hero-brand[data-brand="amazon"]{--bs:70px;--bx:76%;--by:90%}
-  .hero-brand[data-brand="tiktok"]{--bs:74px;--bx:26%;--by:88%}
-  .hero-brand[data-brand="base"]{--bs:72px;--bx:10%;--by:44%}
+  .hero-brand[data-brand="amazon"]{--bs:74px;--bx:76%;--by:90%}
+  .hero-brand[data-brand="shopify"]{--bs:74px;--bx:26%;--by:88%}
+  .hero-brand[data-brand="base"]{--bs:74px;--bx:10%;--by:44%}
 }
 .hero-logo{position:relative;z-index:2;width:100%;height:auto;max-width:100%;
   transform-origin:center center;will-change:transform;backface-visibility:hidden;
@@ -612,8 +612,11 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 /* ====================== Positioning ====================== */
 .territorio{background:#fff;text-align:center;overflow:hidden;padding-bottom:4.4rem}
 .territorio .h2{margin:1.35rem auto 0;max-width:22em;white-space:normal;line-height:1.12;
-  font-size:clamp(1.7rem,3.15vw,2.7rem);padding:0 .4rem}
+  font-size:clamp(1.7rem,3.15vw,2.7rem);padding:0 .4rem;color:var(--atlas-navy)}
 .territorio .lede{margin:1.35rem auto 0;max-width:42ch}
+@media (min-width:1024px){
+  .territorio .lede{max-width:64ch;text-wrap:balance}
+}
 
 .channel-rails{
   --badge:clamp(72px,9.2vw,98px);
@@ -722,14 +725,17 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   text-shadow:0 1px 16px rgba(6,20,79,.55),0 1px 4px rgba(6,20,79,.35)}
 .olist-feat-cta{position:relative;z-index:2;margin-top:1.7rem;max-width:100%;white-space:normal;line-height:1.3;
   background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
-.olist-feat-cta:hover{background:var(--atlas-light);color:var(--atlas-navy)}
+.olist-feat-cta:hover{background:#004EF4;color:#fff}
 .olist-feat-anim{transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.olist-feat .olist-feat-cta{transition:opacity .7s var(--ease),transform .7s var(--ease),background-color .3s ease,color .3s ease}
+.olist-feat:not(.is-scroll-enter) .olist-feat-cta:hover{transform:none}
 .olist-feat.is-ready:not(.is-in) .olist-feat-anim{opacity:0;transform:translateY(18px)}
 .olist-feat.is-in .olist-feat-label{transition-delay:.02s}
 .olist-feat.is-in .olist-feat-title{transition-delay:.1s}
 .olist-feat.is-in .olist-feat-sub{transition-delay:.18s}
-.olist-feat.is-in .olist-feat-cta{transition-delay:.26s}
+.olist-feat.is-in .olist-feat-cta{transition-delay:.26s,.26s,0s,0s}
 .olist-feat.is-scroll-enter .olist-feat-anim{transition:none;transition-delay:0s}
+.olist-feat.is-scroll-enter .olist-feat-cta{transition:background-color .3s ease,color .3s ease}
 .olist-feat.is-scroll-enter .olist-feat-label{opacity:var(--olist-label);transform:translateY(calc((1 - var(--olist-label)) * 16px))}
 .olist-feat.is-scroll-enter .olist-feat-title{opacity:var(--olist-title);transform:translateY(calc((1 - var(--olist-title)) * 18px))}
 .olist-feat.is-scroll-enter .olist-feat-sub{opacity:var(--olist-sub);transform:translateY(calc((1 - var(--olist-sub)) * 16px))}
@@ -778,7 +784,9 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .erp-areas{list-style:none;margin:1.35rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
 .erp-areas li{margin:0;padding:.42rem .8rem;border-radius:999px;font-size:13px;font-weight:500;line-height:1.2;
   color:#fff;border:1px solid rgba(72,214,208,.34);background:rgba(8,169,230,.1)}
-.erp-msg-cta{margin-top:1.5rem;max-width:100%;white-space:normal;text-align:left;line-height:1.3}
+.erp-msg-cta{margin-top:1.5rem;max-width:100%;white-space:normal;text-align:left;line-height:1.3;
+  background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
+.erp-msg-cta:hover{background:#004EF4;color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
 .erp-sys{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);
   align-items:center;column-gap:.42rem;min-width:0;width:100%}
 @media (min-width:1024px){
@@ -839,6 +847,8 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 }
 .erp-msg-eyebrow,.erp-msg-title,.erp-msg-lede,.erp-areas,.erp-msg-cta,.erp-dash,.erp-hub{
   transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.erp-msg-cta{transition:opacity .7s var(--ease),transform .7s var(--ease),background-color .3s ease,color .3s ease}
+.erp-method.is-in .erp-msg-cta:hover{transform:none}
 .erp-method:not(.is-in) .erp-msg-eyebrow,.erp-method:not(.is-in) .erp-msg-title,.erp-method:not(.is-in) .erp-msg-lede,
 .erp-method:not(.is-in) .erp-areas,.erp-method:not(.is-in) .erp-msg-cta{opacity:0;transform:translateY(18px)}
 .erp-method:not(.is-in) .erp-dash{opacity:0}
@@ -848,7 +858,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .erp-method.is-in .erp-msg-title{transition-delay:.04s}
 .erp-method.is-in .erp-msg-lede{transition-delay:.12s}
 .erp-method.is-in .erp-areas{transition-delay:.2s}
-.erp-method.is-in .erp-msg-cta{transition-delay:.28s}
+.erp-method.is-in .erp-msg-cta{transition-delay:.28s,.28s,0s,0s}
 .erp-method.is-in .erp-dash{transition-delay:.12s}
 .erp-method.is-in .erp-hub{transition-delay:.18s}
 .erp-method.is-in .erp-pill:nth-child(1){transition-delay:.28s}
@@ -967,6 +977,9 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   font-size:24px;font-weight:600;line-height:1;color:var(--atlas-navy);background:var(--atlas-teal);
   box-shadow:0 0 0 6px rgba(72,214,208,.14)}
 .beneficio-foot{margin-top:clamp(2rem,3.6vw,2.6rem);text-align:center}
+.beneficio-foot .btn{background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45);
+  transition:transform .25s var(--ease),background-color .3s ease,color .3s ease}
+.beneficio-foot .btn:hover{background:#004EF4;color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.45);transform:none}
 
 /* ====================== Project visibility — notebook + stepper ====================== */
 .acompanha{background:var(--atlas-light);color:var(--atlas-ink);overflow-x:clip}
@@ -1057,7 +1070,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   opacity:0;
   transition:opacity .3s ease;
 }
-.acompanha-shape:hover::before{opacity:.4}
+.acompanha-shape:hover::before{opacity:.85}
 .acompanha-stage::before{
   content:"";
   position:absolute;
@@ -1257,11 +1270,36 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   .acompanha-step-idx{font-size:13px}
 }
 .acompanha-band{
-  margin-top:clamp(1.45rem,3vw,2.1rem);
-  padding:.95rem 1.25rem 1.05rem;
-  border-radius:14px;
+  margin:clamp(1.45rem,3vw,2.1rem) auto 0;
+  max-width:1000px;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:1rem;
+  padding:1.1rem 1.1rem 1.15rem;
+  border-radius:18px;
   background:rgba(8,169,230,.08);
   border:1px solid rgba(8,169,230,.14);
+}
+.acompanha-band-text{min-width:0}
+.acompanha-cta{
+  flex:none;
+  min-height:53px;
+  padding:0 1.1rem;
+  font-size:16.5px;
+  white-space:normal;
+  text-align:center;
+  line-height:1.25;
+  background:var(--atlas-navy);
+  color:#fff;
+  transition:background-color .3s ease,color .3s ease;
+}
+.acompanha-cta:hover{background:#004EF4;color:#fff;transform:none}
+@media (min-width:768px){
+  .acompanha-band{flex-direction:row;align-items:center;justify-content:space-between;
+    gap:clamp(1.25rem,2.5vw,2.25rem);padding:.9rem .9rem .9rem clamp(1.25rem,2.2vw,1.75rem)}
+  .acompanha-band-text{flex:1 1 auto}
+  .acompanha-cta{padding:0 1.76rem;white-space:nowrap}
 }
 .acompanha-band p{margin:0}
 .acompanha-band-title{
@@ -1305,7 +1343,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
     gap:clamp(1.75rem,4vw,3.25rem);align-items:center}
 }
 .atlas4p-copy{min-width:0}
-.atlas4p .h2{max-width:18ch;color:var(--atlas-ink)}
+.atlas4p .h2{max-width:18ch;color:var(--atlas-navy)}
 .atlas4p .lede{margin-top:1.15rem;max-width:46ch}
 .atlas4p-copy .lede + .lede{margin-top:.85rem}
 .atlas4p-intro-cta{margin-top:1.6rem;max-width:100%;white-space:normal;line-height:1.3}
@@ -1434,8 +1472,8 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .atlas4p-banner[role="button"]:focus-visible{outline:2px solid var(--atlas-cyan);outline-offset:4px}
 .flv-portrait{transform-origin:50% 50%;transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .flv-expand{position:absolute;left:50%;top:50%;z-index:1;width:var(--flv-w,100%);height:auto;
-  aspect-ratio:1920/1200;max-width:none;object-fit:contain;cursor:pointer;
-  clip-path:inset(3.5% 2.0833% 7% 2.4479% round 3.0208% / 4.8333%);
+  aspect-ratio:1920/1080;max-width:none;object-fit:contain;cursor:pointer;
+  clip-path:inset(9.0741% 8.9063% 7.6852% 9.4792% round 2.8125% / 5%);
   opacity:0;pointer-events:none;
   transform:translate(calc(-50% + var(--flv-dx,0px)),calc(-50% + var(--flv-dy,0px))) scale(var(--flv-s0,.5));
   transition:opacity .45s var(--ease),transform .6s var(--ease)}
@@ -1446,7 +1484,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .atlas4p-stage.is-flv-open .atlas4p-node{filter:blur(6px) opacity(.4);transform:scale(var(--flv-ns,1))}
 @media (max-width:1279px){
   .atlas4p-banner{width:min(100%,400px)}
-  .atlas4p-core .btn{white-space:normal;height:auto;padding:.85rem 1.15rem;line-height:1.3;text-align:center}
+  .atlas4p-core .btn{white-space:normal;height:auto;padding:.935rem 1.265rem;line-height:1.3;text-align:center}
 }
 .atlas4p-node{display:flex;flex-direction:column;padding:1.3rem 1.25rem 1.2rem;min-height:11.5rem;
   transition:border-color .42s var(--ease),box-shadow .42s var(--ease),filter .52s var(--ease)}
@@ -1574,15 +1612,15 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 /* ====================== Contact ====================== */
 .contact{background:var(--atlas-light)}
 .acompanha + div > .contact.seam-in{padding-top:calc(2.5rem + var(--seam-r))}
-.contact .h2{max-width:26ch;margin-inline:auto;text-align:center}
+.contact .h2{max-width:26ch;margin-inline:auto;text-align:center;color:var(--atlas-navy)}
+@media (min-width:768px){.contact .h2{max-width:16em}}
 .contact .eyebrow{justify-content:center}
 .contact-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
 .form{margin:3rem auto 0;max-width:44rem;display:flex;flex-direction:column;gap:1.8rem}
 .form-row{display:grid;grid-template-columns:1fr;gap:1.8rem}
 @media (min-width:768px){.form-row{grid-template-columns:1fr 1fr}}
 .field{position:relative;display:flex;flex-direction:column}
-.field label{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--atlas-slate);margin-bottom:.5rem}
-.field input,.field select,.field textarea{width:100%;background:#fff;border:1px solid rgba(16,23,42,.15);
+.field label{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--atlas-slate);margin-bottom:.5rem}.field input,.field select,.field textarea{width:100%;background:#fff;border:1px solid rgba(16,23,42,.15);
   border-radius:12px;padding:.9rem 1rem;font-size:1rem;font-family:inherit;color:var(--atlas-ink);outline:none;transition:border-color .2s}
 .field textarea{min-height:8rem;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--atlas-blue)}
@@ -1592,9 +1630,9 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 /* ====================== Footer: navy CTA + white panel ====================== */
 .footer{position:relative;overflow:hidden;background:var(--atlas-navy);color:#fff;padding:0}
 .footer-cta{position:relative;overflow:hidden;background:var(--atlas-navy);color:#fff;
-  padding:calc(5rem + var(--seam-r)) max(1.5rem, calc((100% - 1240px) / 2)) 4.1rem}
-@media (min-width:768px){.footer-cta{padding-inline:max(3rem, calc((100% - 1240px) / 2));padding-bottom:4.4rem}}
-@media (min-width:1024px){.footer-cta{padding-inline:max(var(--page-gutter), calc((100% - 1240px) / 2));padding-bottom:4.8rem}}
+  padding:calc(5rem + var(--seam-r)) max(1.5rem, calc((100% - 1240px) / 2)) 5rem}
+@media (min-width:768px){.footer-cta{padding-inline:max(3rem, calc((100% - 1240px) / 2))}}
+@media (min-width:1024px){.footer-cta{padding-inline:max(var(--page-gutter), calc((100% - 1240px) / 2))}}
 .footer-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
 body.no-webgl .footer-canvas{display:none}
 .footer-cta-inner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;box-sizing:border-box}
@@ -1614,7 +1652,6 @@ body.no-webgl .footer-canvas{display:none}
 .footer-brand img{display:block;height:52px;width:auto;max-width:100%;object-fit:contain;object-position:left center}
 .footer-brand p{margin-top:1.25rem;color:var(--atlas-navy);font-size:.92rem;line-height:1.6;max-width:34ch}
 @media (max-width:767px){
-  .footer-cta{padding-bottom:3.4rem}
   .footer-panel{padding-top:2.35rem;padding-bottom:2rem}
   .footer-brand img{height:clamp(36px,11vw,44px)}
   .footer-brand p{margin-top:1rem}
@@ -1626,6 +1663,13 @@ body.no-webgl .footer-canvas{display:none}
   font-style:normal;line-height:1.9;transition:color .2s var(--ease)}
 .footer-panel .foot-col a:hover{color:var(--atlas-blue)}
 .footer-grid .foot-col:last-child address{max-width:26ch;overflow-wrap:break-word;word-wrap:break-word}
+.foot-social{display:flex;align-items:center;gap:.6rem;margin-top:1rem}
+.footer-panel .foot-col .foot-social a{display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;line-height:1;color:var(--atlas-blue);
+  border:1px solid rgba(12,43,191,.22);transition:background-color .25s ease,border-color .25s ease}
+.footer-panel .foot-col .foot-social a:hover{color:var(--atlas-blue);background:rgba(12,43,191,.08);border-color:rgba(12,43,191,.4)}
+.footer-panel .foot-col .foot-social a:focus-visible{outline:2px solid var(--atlas-blue);outline-offset:3px}
+.foot-social svg{width:20px;height:20px;display:block}
 .footer-bottom{margin-top:2.6rem;padding-top:1.5rem;border-top:1px solid rgba(6,20,79,.1);
   display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.8rem;color:var(--atlas-navy)}
 @media (max-width:767px){.footer-bottom{margin-top:2rem;padding-top:1.25rem}}
@@ -1679,6 +1723,20 @@ body.pre-active{overflow:hidden}
   .hero-brand{filter:none !important;will-change:auto}
   .pre-mark .pre-facet{animation:none !important}
 }
+
+/* ====================== WhatsApp ====================== */
+.wa-float{position:fixed;z-index:85;
+  right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:#25D366;color:#fff;box-shadow:0 6px 18px -4px rgba(6,20,79,.35),0 2px 6px rgba(6,20,79,.14);
+  transition:background-color .3s ease,box-shadow .3s ease}
+.wa-float:hover{background:#1EBE5A;box-shadow:0 10px 24px -6px rgba(6,20,79,.42),0 2px 8px rgba(6,20,79,.16)}
+.wa-float:focus-visible{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px #004EF4}
+.wa-float svg{width:28px;height:28px;display:block}
+@media (min-width:768px){
+  .wa-float{right:calc(28px + env(safe-area-inset-right,0px));bottom:calc(28px + env(safe-area-inset-bottom,0px));width:58px;height:58px}
+  .wa-float svg{width:31px;height:31px}
+}
 </style>
 </head>
 <body class="pre-active">
@@ -1719,21 +1777,21 @@ body.pre-active{overflow:hidden}
       </button>
       <div class="drop-panel" id="dropPanel" role="menu">
         <div class="drop-group">
-          <h4>Implantação &amp; Tecnologia</h4>
+          <h4>Implementação &amp; Tecnologia</h4>
           <a href="#implementacao-olist" role="menuitem">Implementação Olist ERP</a>
-          <a href="#contato" role="menuitem">Implementação Base</a>
+          <a href="#contato" role="menuitem">Implementação Base HUB</a>
         </div>
         <div class="drop-group">
           <h4>Performance</h4>
-          <a href="#contato" role="menuitem">Gestão de Performance em Marketplaces</a>
+          <a href="#contato" role="menuitem">Gestão de ADS em Marketplaces</a>
         </div>
         <div class="drop-group">
-          <h4>Conteúdo</h4>
-          <a href="#contato" role="menuitem">Creative Performance</a>
+          <h4>Criativo</h4>
+          <a href="#contato" role="menuitem">Gestão de Anúncios</a>
         </div>
         <div class="drop-group">
           <h4>Estratégia</h4>
-          <a href="#contato" role="menuitem">Mentoria Estratégica em Varejo Digital</a>
+          <a href="#contato" role="menuitem">Mentoria Estratégica</a>
         </div>
       </div>
     </div>
@@ -1741,7 +1799,7 @@ body.pre-active{overflow:hidden}
     <a href="#contato">Contato</a>
   </nav>
   <div class="nav-right">
-    <a class="nav-cta" href="#contato">Fale com um especialista</a>
+    <a class="nav-cta" href="https://wa.me/553185118837" target="_blank" rel="noopener noreferrer">Fale com um especialista</a>
     <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -1792,9 +1850,8 @@ body.pre-active{overflow:hidden}
       <div class="hero-overlay">
         <div class="container hero-layout">
           <div class="hero-inner">
-            <p class="eyebrow hero-eyebrow">CONSULTORIA EM VAREJO DIGITAL</p>
             <h1 class="h1" data-letters>Consultoria especializada para operações de varejo digital</h1>
-            <p class="hero-sub">Implantamos sistemas, estruturamos operações e gerimos vendas, anúncios e publicidade para empresas que atuam em marketplaces e e-commerce.</p>
+            <p class="hero-sub">Implementamos sistemas, estruturamos operações e gerimos vendas, anúncios e publicidade para empresas que atuam em marketplaces e e-commerce.</p>
             <div class="hero-actions">
               <a class="btn btn-primary hero-cta" href="#servicos">Conheça nossas soluções <span class="arw">→</span></a>
             </div>
@@ -1803,11 +1860,11 @@ body.pre-active{overflow:hidden}
             <div class="hero-halo" id="heroHalo"></div>
             <div class="hero-brands" id="heroBrands">
               <img class="hero-brand" data-brand="olist" src="brand/6.png" alt="" width="160" height="160">
-              <img class="hero-brand" data-brand="shopify" src="brand/shopify.png" alt="" width="160" height="160">
+              <img class="hero-brand" data-brand="tiktok" src="brand/3.png" alt="" width="160" height="160">
               <img class="hero-brand" data-brand="ml" src="brand/1.png" alt="" width="160" height="160">
               <img class="hero-brand" data-brand="shopee" src="brand/5.png" alt="" width="160" height="160">
               <img class="hero-brand" data-brand="amazon" src="brand/4.png" alt="" width="160" height="160">
-              <img class="hero-brand" data-brand="tiktok" src="brand/3.png" alt="" width="160" height="160">
+              <img class="hero-brand" data-brand="shopify" src="brand/shopify.png" alt="" width="160" height="160">
               <img class="hero-brand" data-brand="base" src="brand/7.png" alt="" width="160" height="160">
             </div>
             <div class="hero-logo-stack" id="heroLogoStack">
@@ -1827,7 +1884,7 @@ body.pre-active{overflow:hidden}
     <div class="hero-portal-fill" id="heroPortalFill"></div>
     <div class="hero-portal-copy" id="heroPortalCopy">
       <p class="hero-portal-kicker">Soluções para cada etapa da sua operação digital.</p>
-      <p class="hero-portal-support">Da implantação de sistemas à gestão de vendas, anúncios e publicidade: conheça os serviços especializados da Atlas.</p>
+      <p class="hero-portal-support">Da implementação de sistemas à gestão de vendas, anúncios e publicidade: conheça os serviços especializados da Atlas.</p>
     </div>
   </div>
   </div>
@@ -1849,7 +1906,7 @@ body.pre-active{overflow:hidden}
             <span class="olist-feat-kicker">Olist ERP organiza. A Atlas faz funcionar.</span>
           </p>
           <h2 class="olist-feat-title olist-feat-anim"><span>Contratar é só o começo.</span> <span>Fazer funcionar é com a Atlas.</span></h2>
-          <p class="olist-feat-sub olist-feat-anim">Configuramos o ERP para sua operação, treinamos sua equipe e acompanhamos cada etapa da implantação.</p>
+          <p class="olist-feat-sub olist-feat-anim">Configuramos o ERP para sua operação, treinamos sua equipe e acompanhamos cada etapa da implementação.</p>
           <a class="btn olist-feat-cta olist-feat-anim" href="#contato" data-service="Implementação Olist ERP">Quero implementar o Olist ERP <span class="arw">→</span></a>
         </div>
       </div>
@@ -1863,7 +1920,7 @@ body.pre-active{overflow:hidden}
         <div class="erp-msg">
           <p class="eyebrow on-dark erp-msg-eyebrow">O que fazemos</p>
           <h2 class="erp-msg-title">O Olist ERP precisa acompanhar a sua operação, não apenas estar configurado.</h2>
-          <p class="erp-msg-lede">Antes de implantar, entendemos como sua empresa cadastra produtos, controla estoque, recebe pedidos, fatura e expede. Com essa visão, configuramos o sistema e organizamos as rotinas que sua equipe vai executar no dia a dia.</p>
+          <p class="erp-msg-lede">Antes de implementar, entendemos como sua empresa cadastra produtos, controla estoque, recebe pedidos, fatura e expede. Com essa visão, configuramos o sistema e organizamos as rotinas que sua equipe vai executar no dia a dia.</p>
           <ul class="erp-areas" aria-label="Áreas que estruturamos no Olist ERP">
             <li>Produtos e cadastros</li>
             <li>Estoque</li>
@@ -1927,7 +1984,7 @@ body.pre-active{overflow:hidden}
           <p class="eyebrow reveal-blk">IMPLEMENTAÇÃO OLIST ERP</p>
           <h2 class="h2" data-letters>Sua operação está pronta para mudar de sistema?</h2>
           <p class="lede reveal-blk">Se você já usa outro ERP, entendemos o que funciona hoje, o que precisa melhorar e quais processos devem ser preservados na transição. A partir daí, planejamos a implementação, configuramos as rotinas e preparamos sua equipe para trabalhar na nova plataforma.</p>
-          <p class="lede reveal-blk">Para quem está implantando um ERP pela primeira vez, partimos da mesma premissa: entender a operação antes de configurar a ferramenta.</p>
+          <p class="lede reveal-blk">Para quem está implementando um ERP pela primeira vez, partimos da mesma premissa: entender a operação antes de configurar o sistema.</p>
           <div class="reveal-blk"><a class="btn btn-dark atlas4p-intro-cta" href="#contato" data-service="Implementação Olist ERP">Quero avaliar minha transição <span class="arw">→</span></a></div>
         </div>
         <figure class="atlas4p-motion">
@@ -1972,9 +2029,9 @@ body.pre-active{overflow:hidden}
         <article class="atlas4p-core">
           <div class="flv-wrap">
             <figure class="atlas4p-banner" id="flavioTrigger" tabindex="0" role="button" aria-expanded="false" aria-controls="flavioExpand" aria-label="Ampliar cartão: Flávio Izac, gestor Atlas. Consultoria certificada Atlas, parceira Diamante Olist.">
-              <img class="flv-portrait" src="brand/cardflavio.png" alt="" width="800" height="1200" decoding="async">
+              <img class="flv-portrait" src="brand/cardflavio.png?v=20260928-1937" alt="" width="800" height="1200" decoding="async">
             </figure>
-            <img class="flv-expand" id="flavioExpand" src="brand/cardflavioexpandido.png?v=20260928-1621" alt="Flávio Izac. Sua implementação com uma consultoria certificada pela Olist. A Atlas é Parceiro Diamante Olist. Unimos conhecimento do sistema à experiência de quem entende a rotina do varejo digital para configurar o ERP, preparar sua equipe e apoiar a implantação." width="1920" height="1200" decoding="async">
+            <img class="flv-expand" id="flavioExpand" src="brand/cardflavioexpandido.png?v=20260928-1939" alt="Flávio Izac. Sua implementação com uma consultoria certificada pela Olist. A Atlas é Parceiro Diamante Olist. Unimos conhecimento do sistema à experiência de quem entende a rotina do varejo digital para configurar o ERP, preparar sua equipe e apoiar a implementação." width="1920" height="1080" decoding="async">
           </div>
           <a class="btn btn-dark" href="#contato" data-service="Implementação Olist ERP">Quero conhecer a implementação Atlas</a>
         </article>
@@ -2008,7 +2065,7 @@ body.pre-active{overflow:hidden}
         <article class="atlas4p-card atlas4p-node" data-slot="n4" tabindex="0">
           <span class="atlas4p-num">4P</span>
           <h3>Suporte</h3>
-          <p>Acompanhamos de perto o início do uso, apoiamos a equipe nas dúvidas da implantação e ajudamos a operação a ganhar autonomia e segurança.</p>
+          <p>Acompanhamos de perto o início do uso, apoiamos a equipe nas dúvidas da implementação e ajudamos a operação a ganhar autonomia e segurança.</p>
           <ul class="atlas4p-feats">
             <li class="atlas4p-feat"><span>Entrada assistida</span><span class="atlas4p-switch" aria-hidden="true"></span></li>
             <li class="atlas4p-feat"><span>Acompanhamento inicial</span><span class="atlas4p-switch" aria-hidden="true"></span></li>
@@ -2032,38 +2089,6 @@ body.pre-active{overflow:hidden}
       </div>
       <div class="channel-rail channel-rail-b" aria-hidden="true">
         <div class="channel-track" id="channelTrackB"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ Benefício exclusivo Atlas ============ -->
-  <section class="section beneficio seam seam-in" id="beneficio" data-nav-theme="dark">
-    <div class="container">
-      <div class="beneficio-head">
-        <p class="eyebrow on-dark reveal-blk">BENEFÍCIO EXCLUSIVO ATLAS</p>
-        <div class="beneficio-title">
-          <img class="beneficio-icon beneficio-icon--left reveal-blk" src="brand/olistbeneficios1.svg" alt="" width="125" height="48" aria-hidden="true">
-          <h2 class="h2" data-letters>Contrate o Olist ERP com 30 dias grátis + a melhor condição comercial disponível no mercado.</h2>
-          <img class="beneficio-icon beneficio-icon--right reveal-blk" src="brand/olistdesktop2.svg" alt="" width="47" height="48" aria-hidden="true">
-        </div>
-        <p class="beneficio-coupon reveal-blk"><span class="beneficio-coupon-label">Cupom:</span> <span class="beneficio-coupon-code">ATLAS</span></p>
-        <p class="lede reveal-blk">Use o cupom da Atlas para acessar essa condição na assinatura do sistema. E, ao escolher nossa equipe para fazer a implementação, receba também 10% de desconto no serviço da Atlas.</p>
-      </div>
-      <div class="beneficio-grid reveal-blk">
-        <article class="beneficio-card beneficio-card--olist">
-          <p class="beneficio-tag"><img src="brand/olist.svg" alt="" width="80" height="39">Assinatura Olist ERP</p>
-          <p class="beneficio-value">30 dias grátis</p>
-          <p class="beneficio-desc">+ a melhor condição comercial disponível no mercado, com o cupom da Atlas.</p>
-        </article>
-        <span class="beneficio-plus" aria-hidden="true">+</span>
-        <article class="beneficio-card beneficio-card--atlas">
-          <p class="beneficio-tag">Implementação Atlas</p>
-          <p class="beneficio-value">10% de desconto</p>
-          <p class="beneficio-desc">no serviço da Atlas, ao escolher nossa equipe para fazer a implementação.</p>
-        </article>
-      </div>
-      <div class="beneficio-foot reveal-blk">
-        <a class="btn btn-primary" href="#contato" data-service="Implementação Olist ERP">Fale com um especialista <span class="arw">→</span></a>
       </div>
     </div>
   </section>
@@ -2151,9 +2176,44 @@ body.pre-active{overflow:hidden}
           </li>
         </ol>
         <div class="acompanha-band">
-          <p class="acompanha-band-title">Você não fica sozinho em nenhum momento do projeto.</p>
-          <p class="acompanha-band-copy">Nós conduzimos junto com você, do início à operação funcionando.</p>
+          <div class="acompanha-band-text">
+            <p class="acompanha-band-title">Você não fica sozinho em nenhum momento do projeto.</p>
+            <p class="acompanha-band-copy">Nós conduzimos junto com você, do início à operação funcionando.</p>
+          </div>
+          <a class="btn acompanha-cta" href="#contato">Quero acompanhar meu projeto <span class="arw">→</span></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Benefício exclusivo Atlas ============ -->
+  <section class="section beneficio seam seam-in" id="beneficio" data-nav-theme="dark">
+    <div class="container">
+      <div class="beneficio-head">
+        <p class="eyebrow on-dark reveal-blk">BENEFÍCIO EXCLUSIVO ATLAS</p>
+        <div class="beneficio-title">
+          <img class="beneficio-icon beneficio-icon--left reveal-blk" src="brand/olistbeneficios1.svg" alt="" width="125" height="48" aria-hidden="true">
+          <h2 class="h2" data-letters>Contrate o Olist ERP com 30 dias grátis + a melhor condição comercial disponível no mercado.</h2>
+          <img class="beneficio-icon beneficio-icon--right reveal-blk" src="brand/olistdesktop2.svg" alt="" width="47" height="48" aria-hidden="true">
+        </div>
+        <p class="beneficio-coupon reveal-blk"><span class="beneficio-coupon-label">Cupom:</span> <span class="beneficio-coupon-code">ATLAS</span></p>
+        <p class="lede reveal-blk">Use o cupom da Atlas para acessar essa condição na assinatura do sistema. E, ao escolher nossa equipe para fazer a implementação, receba também 10% de desconto no serviço da Atlas.</p>
+      </div>
+      <div class="beneficio-grid reveal-blk">
+        <article class="beneficio-card beneficio-card--olist">
+          <p class="beneficio-tag"><img src="brand/olist.svg" alt="" width="80" height="39">Assinatura Olist ERP</p>
+          <p class="beneficio-value">30 dias grátis</p>
+          <p class="beneficio-desc">+ a melhor condição comercial disponível no mercado, com o cupom da Atlas.</p>
+        </article>
+        <span class="beneficio-plus" aria-hidden="true">+</span>
+        <article class="beneficio-card beneficio-card--atlas">
+          <p class="beneficio-tag">Implementação Atlas</p>
+          <p class="beneficio-value">10% de desconto</p>
+          <p class="beneficio-desc">no serviço da Atlas, ao escolher nossa equipe para fazer a implementação.</p>
+        </article>
+      </div>
+      <div class="beneficio-foot reveal-blk">
+        <a class="btn btn-primary" href="https://olist.com/lp/sistema-de-gestao/?parceiro=ATLAS" target="_blank" rel="noopener noreferrer">Contratar com o cupom Atlas <span class="arw">→</span></a>
       </div>
     </div>
   </section>
@@ -2164,16 +2224,14 @@ body.pre-active{overflow:hidden}
       <div class="container">
         <div class="contact-head">
           <p class="eyebrow">CONTATO</p>
-          <h2 class="h2" data-letters>Converse com a Atlas sobre o ponto específico que sua operação precisa desenvolver.</h2>
+          <h2 class="h2" data-letters>Vamos encontrar o próximo passo para a sua operação.</h2>
         </div>
         <form class="form" id="contactForm" novalidate>
           <div class="form-row">
             <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required /></div>
             <div class="field"><label for="f-telefone">Telefone</label><input id="f-telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" maxlength="15" spellcheck="false" required /></div>
           </div>
-          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" required /></div>
-          <div class="field"><label for="f-msg">Sobre a sua operação</label><textarea id="f-msg" name="mensagem" placeholder="Conte o ponto específico que você quer desenvolver."></textarea></div>
-          <div class="form-submit">
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" required /></div>          <div class="form-submit">
             <button class="btn btn-primary" type="submit">Falar com a Atlas <span class="arw">→</span></button>
             <p class="status" id="formStatus" role="status" aria-live="polite"></p>
           </div>
@@ -2186,9 +2244,8 @@ body.pre-active{overflow:hidden}
         <canvas class="footer-canvas" id="footerCanvas" aria-hidden="true"></canvas>
         <div class="footer-cta-inner">
           <div class="footer-top">
-            <p class="eyebrow on-dark">ATLAS CONSULTORIA DIGITAL</p>
-            <h2 class="h2" data-letters>Vamos desenvolver o próximo movimento da sua operação?</h2>
-            <a class="btn btn-ghost" href="#contato">Preencher o formulário</a>
+            <p class="eyebrow on-dark">OUTRAS SOLUÇÕES ATLAS</p>
+            <h2 class="h2" data-letters>Conheça outras soluções para fazer sua operação avançar.</h2>
           </div>
         </div>
       </div>
@@ -2209,9 +2266,9 @@ body.pre-active{overflow:hidden}
           <div class="foot-col">
             <h4>Serviços</h4>
             <a href="#implementacao-olist">Implementação Olist ERP</a>
-            <a href="#contato">Implementação Base</a>
-            <a href="#contato">Gestão de Performance</a>
-            <a href="#contato">Creative Performance</a>
+            <a href="#contato">Implementação Base HUB</a>
+            <a href="#contato">Gestão de ADS em Marketplaces</a>
+            <a href="#contato">Gestão de Anúncios</a>
             <a href="#contato">Mentoria Estratégica</a>
           </div>
           <div class="foot-col">
@@ -2219,6 +2276,14 @@ body.pre-active{overflow:hidden}
             <!-- VALIDATION: substituir por dados oficiais antes de publicar -->
             <a href="#contato">Fale com um especialista</a>
             <address>Atendimento a operações de varejo digital em marketplaces e e-commerce.</address>
+            <div class="foot-social">
+              <a href="https://www.instagram.com/atlasconsultoriadigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Atlas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>
+              </a>
+              <a href="mailto:comercial@atlasconsultoriadigital.com.br" aria-label="Enviar e-mail para a Atlas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 5.5 8-5.5"/></svg>
+              </a>
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
@@ -2466,8 +2531,8 @@ body.pre-active{overflow:hidden}
     if(!stage||!trig||!banner) return;
     var wrap=trig.parentNode;
     var open=false, lastType="mouse";
-    /* Visible card body inside the 1920×1200 PNG (the rest is transparent padding). */
-    var IMG_W=1920, IMG_H=1200, BODY={l:47, r:1880, t:42, b:1116};
+    /* Visible card body inside the 1920×1080 PNG (the rest is transparent padding). */
+    var IMG_W=1920, IMG_H=1080, BODY={l:182, r:1749, t:98, b:997};
     var nodes=stage.querySelectorAll(".atlas4p-node");
     function size(){
       var cs=getComputedStyle(stage);
@@ -2713,7 +2778,7 @@ body.pre-active{overflow:hidden}
      ======================================================================== */
   var heroH1=document.querySelector("#inicio h1[data-letters]");
   var heroLetterRev = heroH1 ? makeLetterReveal(heroH1,{duration:1600,rise:16,blur:8}) : null;
-  var heroItems=[document.querySelector(".hero-eyebrow"),document.querySelector(".hero-sub"),document.querySelector(".hero-actions")];
+  var heroItems=[document.querySelector(".hero-sub"),document.querySelector(".hero-actions")];
   var heroItemRevs=heroItems.filter(Boolean).map(function(el){
     el.style.opacity="0"; el.style.transform="translateY(20px)"; el.style.willChange="transform,opacity";
     var startTime=null;
@@ -3170,7 +3235,6 @@ body.pre-active{overflow:hidden}
     var telEl=document.getElementById("f-telefone");
     var emailEl=document.getElementById("f-email");
     var nomeEl=document.getElementById("f-nome");
-    var msgEl=document.getElementById("f-msg");
     function telDigits(v){ return String(v||"").replace(/\D/g,"").slice(0,11); }
     function formatTel(v){
       var d=telDigits(v);
@@ -3211,8 +3275,7 @@ body.pre-active{overflow:hidden}
       var nome=nomeEl?nomeEl.value.trim():"";
       var telefone=telEl?telEl.value.trim():"";
       var email=emailEl?emailEl.value.trim():"";
-      var mensagem=msgEl?msgEl.value.trim():"";
-      var payload={nome:nome,telefone:telefone,email:email,mensagem:mensagem};
+      var payload={nome:nome,telefone:telefone,email:email};
       if(!payload.nome){ setFormError("Preencha nome, telefone e e-mail.", nomeEl); return; }
       if(!telDigits(payload.telefone)){ setFormError("Preencha nome, telefone e e-mail.", telEl); return; }
       if(!payload.email){ setFormError("Preencha nome, telefone e e-mail.", emailEl); return; }
@@ -3409,10 +3472,10 @@ body.pre-active{overflow:hidden}
     var brandMotion={
       olist:{ex:-1,ey:-0.88,ax:5,ay:7,fs:0.52,fc:0.41,ph:0.3},
       ml:{ex:1,ey:-0.78,ax:6,ay:5,fs:0.46,fc:0.58,ph:1.2},
-      shopify:{ex:0.12,ey:-1.1,ax:5,ay:6,fs:0.50,fc:0.47,ph:5.3},
+      tiktok:{ex:0.12,ey:-1.1,ax:5,ay:6,fs:0.50,fc:0.47,ph:5.3},
       shopee:{ex:1.18,ey:0.08,ax:4,ay:8,fs:0.60,fc:0.36,ph:2.1},
       amazon:{ex:0.92,ey:1,ax:5,ay:6,fs:0.40,fc:0.50,ph:2.9},
-      tiktok:{ex:-0.96,ey:0.94,ax:7,ay:4,fs:0.56,fc:0.43,ph:3.7},
+      shopify:{ex:-0.96,ey:0.94,ax:7,ay:4,fs:0.56,fc:0.43,ph:3.7},
       base:{ex:-1.16,ey:0.06,ax:4,ay:7,fs:0.49,fc:0.55,ph:4.5}
     };
     if(!img||!stack) return;
@@ -4175,5 +4238,8 @@ body.pre-active{overflow:hidden}
 
 })();
 </script>
+<a class="wa-float" href="https://wa.me/553185118837" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 </body>
 </html>
