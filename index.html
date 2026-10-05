@@ -60,6 +60,7 @@ html{font-size:16px;-webkit-text-size-adjust:100%}
   --ease:cubic-bezier(0.16,1,0.3,1);
   --ring:rgba(8,169,230,0.6);
   --seam-r:clamp(32px,4.8vw,64px);
+  --section-h2:clamp(23px,2.55vw,2.35rem);
 }
 
 html,body{background:var(--atlas-light)}
@@ -256,16 +257,14 @@ html{scroll-padding-top:74px}
 .section.seam-in{padding-top:calc(6rem + var(--seam-r))}
 .footer.seam-in{padding-top:0}
 .svc-block.seam,.svc-block.seam-in{overflow:visible}
-#implementacao-olist{--seam-z:20}#territorio{--seam-z:19}#acompanhamento{--seam-z:18}#beneficio{--seam-z:17}
+#implementacao-olist{--seam-z:20}#acompanhamento{--seam-z:19}#territorio{--seam-z:18}#beneficio{--seam-z:17}
 #contato{--seam-z:6}#rodape{--seam-z:5}
 .container{max-width:1240px;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:500;
   letter-spacing:.18em;text-transform:uppercase;color:var(--atlas-mid-blue)}
 .eyebrow::before{content:"";width:8px;height:8px;border-radius:9999px;background:var(--atlas-cyan)}
 .eyebrow.on-dark{color:var(--atlas-teal)}
-.h2{font-weight:800;letter-spacing:-.02em;line-height:1.08;font-size:2rem;color:var(--atlas-ink)}
-@media (min-width:640px){.h2{font-size:2.5rem}}
-@media (min-width:1024px){.h2{font-size:3.4rem}}
+.h2{font-weight:800;letter-spacing:-.02em;line-height:1.08;font-size:var(--section-h2);color:var(--atlas-ink)}
 .lede{color:var(--atlas-slate);line-height:1.7;font-size:1.05rem;font-weight:400}
 .reveal-blk{opacity:0}
 
@@ -614,9 +613,10 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .mq-item .dot{width:8px;height:8px;border-radius:9999px;background:var(--atlas-cyan)}
 
 /* ====================== Positioning ====================== */
-.territorio{background:#fff;text-align:center;overflow:hidden;padding-bottom:4.4rem}
+.territorio{background:#fff;text-align:center;overflow:hidden;padding-bottom:calc(var(--seam-r) + 3.2rem)}
+.acompanha + .territorio.seam-in{padding-top:calc(5.2rem + var(--seam-r))}
 .territorio .h2{margin:1.35rem auto 0;max-width:22em;white-space:normal;line-height:1.12;
-  font-size:clamp(1.7rem,3.15vw,2.7rem);padding:0 .4rem;color:var(--atlas-navy)}
+  font-size:var(--section-h2);padding:0 .4rem;color:var(--atlas-navy);text-wrap:balance}
 .territorio .lede{margin:1.35rem auto 0;max-width:42ch}
 @media (min-width:1024px){
   .territorio .lede{max-width:64ch;text-wrap:balance}
@@ -657,8 +657,8 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 @keyframes channelLeft{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @keyframes channelRight{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
 @media (max-width:640px){
-  .territorio{padding-bottom:3.6rem}
-  .territorio .h2{font-size:clamp(1.55rem,7.2vw,2.05rem);max-width:18.5em}
+  .territorio{padding-bottom:calc(var(--seam-r) + 2.6rem)}
+  .territorio .h2{max-width:18.5em}
   .territorio .lede{max-width:36ch}
   .channel-rails{--badge:clamp(62px,16vw,74px);--badge-gap:12px;--badge-pad:13px;margin-top:2.1rem}
   .channel-badge.is-pill{width:calc(var(--badge) * 2.05)}
@@ -721,11 +721,11 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .olist-feat-kicker{margin:0;font-size:clamp(14px,1.15vw,16px);font-weight:500;letter-spacing:.01em;color:#fff;
   line-height:1.4;text-shadow:0 1px 14px rgba(6,20,79,.5)}
 .olist-feat-title{margin:0;color:#fff;font-weight:800;letter-spacing:-.03em;line-height:1.08;
-  font-size:clamp(30px,3.4vw,48px);max-width:none;text-wrap:balance;
+  font-size:var(--section-h2);max-width:none;text-wrap:balance;
   text-shadow:0 2px 28px rgba(6,20,79,.55),0 1px 8px rgba(6,20,79,.4)}
-.olist-feat-title span{display:block}
+.olist-feat-title span{display:block;text-wrap:balance}
 .olist-feat-title span + span{margin-top:.12em}
-.olist-feat-sub{margin:1.25rem 0 0;max-width:33rem;color:#fff;text-wrap:pretty;font-size:clamp(16px,1.3vw,19px);font-weight:400;line-height:1.55;
+.olist-feat-sub{margin:1.25rem 0 0;max-width:42rem;color:#fff;text-wrap:pretty;font-size:clamp(16px,1.3vw,19px);font-weight:400;line-height:1.55;
   text-shadow:0 1px 16px rgba(6,20,79,.55),0 1px 4px rgba(6,20,79,.35)}
 .olist-feat-cta{position:relative;z-index:2;margin-top:1.7rem;max-width:100%;white-space:normal;line-height:1.3;
   background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
@@ -780,15 +780,15 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 }
 .erp-msg{min-width:0;max-width:38rem}
 .erp-msg-title{margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.08;
-  font-size:clamp(23px,2.55vw,2.35rem);color:#fff;max-width:none;text-wrap:balance;
+  font-size:var(--section-h2);color:#fff;max-width:none;text-wrap:balance;
   text-shadow:0 2px 24px rgba(6,20,79,.4)}
 .erp-msg-eyebrow{display:flex;margin:0 0 1rem}
 .erp-msg-lede{margin:1.1rem 0 0;font-size:clamp(15px,1.2vw,17px);font-weight:400;line-height:1.6;
   color:rgba(255,255,255,.84)}
 .erp-areas{list-style:none;margin:1.35rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
 .erp-areas li{margin:0;padding:.42rem .8rem;border-radius:999px;font-size:13px;font-weight:500;line-height:1.2;
-  color:#fff;border:1px solid rgba(72,214,208,.34);background:rgba(8,169,230,.1)}
-.erp-msg-cta{margin-top:1.5rem;max-width:100%;white-space:nowrap;text-align:left;line-height:1;
+  color:#6CAFFF;border:1px solid rgba(72,214,208,.34);background:rgba(8,169,230,.1)}
+.erp-msg-cta{margin-top:calc(1.5rem + 22px);max-width:100%;white-space:nowrap;text-align:left;line-height:1;
   padding:.72rem 1.45rem;background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
 .erp-msg-cta:hover{background:#004EF4;color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
 .erp-sys{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);
@@ -915,7 +915,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .beneficio .eyebrow{color:var(--atlas-teal);justify-content:center}
 .beneficio-title{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;
   column-gap:clamp(1.25rem,2.6vw,2.25rem);margin-top:clamp(1.1rem,2vw,1.5rem)}
-.beneficio .h2{margin:0 auto;max-width:26ch;color:#fff;font-size:clamp(24px,3.4vw,2.9rem);line-height:1.12;text-wrap:balance}
+.beneficio .h2{margin:0 auto;max-width:26ch;color:#fff;font-size:var(--section-h2);line-height:1.12;text-wrap:balance}
 .beneficio-icon{display:block;flex:none;width:auto;height:clamp(38px,3.6vw,52px);object-fit:contain;
   background:none;border:0;border-radius:0}
 .beneficio-icon--left{justify-self:end;align-self:start;margin-top:.15em}
@@ -1364,7 +1364,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
     column-gap:var(--opint-gap);align-items:stretch}
   .opint-side{display:block;position:relative;min-width:0;width:100%;max-width:400px;overflow:hidden}
   .opint .opint-card{padding-inline:clamp(2rem,3.6vw,4rem)}
-  .atlas4p .opint .opint-title{font-size:clamp(30px,2.8vw,42px);max-width:20ch}
+  .atlas4p .opint .opint-title{font-size:var(--section-h2);max-width:20ch}
   .opint-side--l{justify-self:end}
   .opint-side--r{justify-self:start}
   .opint-side--l{-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 22%,#000 62%);
@@ -1387,7 +1387,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 }
 .opint .opint-eyebrow{color:#fff;margin:0}
 .opint .opint-eyebrow::before{background:#fff}
-.atlas4p .opint-title{margin:1.1rem 0 0;max-width:19ch;color:#fff;font-size:clamp(28px,3.4vw,3rem);line-height:1.08;text-wrap:balance}
+.atlas4p .opint-title{margin:1.1rem 0 0;max-width:19ch;color:#fff;font-size:var(--section-h2);line-height:1.08;text-wrap:balance}
 .atlas4p .opint-lede{margin:1.3rem 0 0;max-width:44ch;color:#fff;text-wrap:pretty}
 .opint-media{position:relative;margin:0;min-width:0;overflow:hidden;border-radius:clamp(22px,2.6vw,32px);
   background:transparent;aspect-ratio:482/540}
@@ -1399,7 +1399,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .atlas4p-head .h2{margin:1rem auto 0;max-width:20ch;text-wrap:balance}
 @media (min-width:1024px){
   .atlas4p-head{max-width:none}
-  .atlas4p-head .h2{max-width:none;white-space:nowrap;font-size:min(3.4rem,calc((100vw - 2 * var(--page-gutter)) / 17.2))}
+  .atlas4p-head .h2{max-width:none;white-space:nowrap}
   .atlas4p-head .lede{max-width:52ch}
 }
 .atlas4p-head .lede{margin:1.1rem auto 0;max-width:52ch}
@@ -1616,11 +1616,12 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 /* ====================== Contact ====================== */
 .contact{background:var(--atlas-light)}
 .acompanha + div > .contact.seam-in{padding-top:calc(2.5rem + var(--seam-r))}
-.contact .h2{max-width:26ch;margin-inline:auto;text-align:center;color:var(--atlas-navy)}
-@media (min-width:768px){.contact .h2{max-width:16em}}
+.contact .h2{max-width:none;margin:0 auto;text-align:center;color:var(--atlas-navy);text-wrap:balance}
 .contact .eyebrow{justify-content:center}
-.contact-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
-.form{margin:3rem auto 0;max-width:44rem;display:flex;flex-direction:column;gap:1.8rem}
+.contact-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.contact-head .lede{margin:0;max-width:38rem;text-align:center;text-wrap:pretty}
+@media (min-width:768px){.contact-head .lede{max-width:none;width:100%}}
+.form{margin:2.5rem auto 0;max-width:44rem;display:flex;flex-direction:column;gap:1.8rem}
 .form-row{display:grid;grid-template-columns:1fr;gap:1.8rem}
 @media (min-width:768px){.form-row{grid-template-columns:1fr 1fr}}
 .field{position:relative;display:flex;flex-direction:column}
@@ -1635,19 +1636,60 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .form-submit .btn:hover{box-shadow:0 18px 44px -10px rgba(8,169,230,.75)}
 .status{min-height:1.25rem;font-size:.9rem;color:var(--atlas-blue);font-weight:500}
 
+/* ====================== Partners / integrations ====================== */
+.partners{position:relative;z-index:1;box-sizing:border-box;background:#fff;overflow:hidden;
+  width:100%;max-width:none;margin:0;padding:1.2rem 0 calc(clamp(36px,5.4vw,72px) + 1.15rem);
+  border-radius:clamp(36px,5.4vw,72px) clamp(36px,5.4vw,72px) 0 0}
+.partners-rails{
+  position:relative;width:100%;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 5%,#000 95%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 5%,#000 95%,transparent 100%)}
+.partners-rail{overflow:hidden;padding:.48rem 0}
+.partners-rail + .partners-rail{margin-top:.32rem}
+.partners-track{display:flex;width:max-content;align-items:center;will-change:transform}
+.partners-rail-a .partners-track{animation:partnersLeft 58s linear infinite}
+.partners-rail-b .partners-track{animation:partnersRight 66s linear infinite}
+.partners-set{display:flex;align-items:center;flex:none;gap:clamp(2.4rem,4.8vw,3.6rem);padding-right:clamp(2.4rem,4.8vw,3.6rem)}
+.partners-logo{display:flex;align-items:center;justify-content:center;flex:none;
+  box-sizing:border-box;width:6.85rem;height:22px;padding:0;border:0;background:none;border-radius:4px;
+  cursor:default}
+.partners-logo img{display:block;width:100%;height:100%;max-width:100%;max-height:22px;
+  object-fit:contain;object-position:center;pointer-events:none;
+  filter:grayscale(1);opacity:.72;mix-blend-mode:multiply;
+  transition:filter .35s ease,opacity .35s ease}
+.partners-logo--tiktok{width:9.4rem}
+.partners-logo--yampi img{width:78%;height:78%;max-height:16px}
+.partners-logo:hover img,.partners-logo:focus-visible img{filter:none;opacity:1}
+.partners-logo:focus-visible{outline:2px solid var(--atlas-blue);outline-offset:4px}
+.partners.is-offscreen .partners-track{animation-play-state:paused}
+.partners-rail:hover .partners-track,.partners-rail:focus-within .partners-track{animation-play-state:paused}
+@keyframes partnersLeft{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@keyframes partnersRight{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+@media (max-width:640px){
+  .partners{padding:.95rem 0 calc(36px + 1.2rem);border-radius:28px 28px 0 0}
+  .partners-logo{width:5.35rem;height:18px}
+  .partners-logo img{max-height:18px}
+  .partners-logo--tiktok{width:7.4rem}
+  .partners-logo--yampi img{max-height:13px}
+  .partners-set{gap:1.85rem;padding-right:1.85rem}
+  .partners-rail{padding:.36rem 0}
+}
+
 /* ====================== Footer: navy CTA + white panel ====================== */
 .footer{position:relative;overflow:hidden;background:var(--atlas-navy);color:#fff;padding:0}
-.footer-cta{position:relative;overflow:hidden;background:var(--atlas-navy);color:#fff;
-  padding:calc(5rem + var(--seam-r)) max(1.5rem, calc((100% - 1240px) / 2)) 5rem}
+.footer-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none;z-index:0}
+body.no-webgl .footer-canvas{display:none}
+.footer-cta{position:relative;z-index:1;overflow:hidden;background:var(--atlas-navy);color:#fff;
+  padding:calc(5rem + var(--seam-r)) max(1.5rem, calc((100% - 1240px) / 2)) calc(2.15rem + clamp(72px,10.2vw,144px))}
+body:not(.no-webgl) .footer-cta{background:transparent}
 @media (min-width:768px){.footer-cta{padding-inline:max(3rem, calc((100% - 1240px) / 2))}}
 @media (min-width:1024px){.footer-cta{padding-inline:max(var(--page-gutter), calc((100% - 1240px) / 2))}}
-.footer-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
-body.no-webgl .footer-canvas{display:none}
 .footer-cta-inner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;box-sizing:border-box}
 .footer-top{display:flex;flex-direction:column;align-items:flex-start;gap:1.4rem;max-width:40rem}
 .footer .h2{color:#fff;max-width:16ch}
 .footer-panel{position:relative;z-index:3;background:#fff;color:var(--atlas-navy);
   border-top-left-radius:clamp(36px,5.4vw,72px);border-top-right-radius:clamp(36px,5.4vw,72px);
+  margin-top:calc(clamp(36px,5.4vw,72px) * -1);
   padding:clamp(2.6rem,4.8vw,3.8rem) max(1.5rem, calc((100% - 1240px) / 2)) 2.25rem}
 @media (min-width:768px){.footer-panel{padding-inline:max(3rem, calc((100% - 1240px) / 2));padding-bottom:2.4rem}}
 @media (min-width:1024px){.footer-panel{padding-inline:max(var(--page-gutter), calc((100% - 1240px) / 2));
@@ -1730,6 +1772,12 @@ body.pre-active{overflow:hidden}
   .hero-cta,.hero-cta .arw{transition:transform .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease)}
   .hero-brand{filter:none !important;will-change:auto}
   .pre-mark .pre-facet{animation:none !important}
+  .partners-rail-a .partners-track,.partners-rail-b .partners-track{
+    animation:none!important;transform:none!important;will-change:auto;
+    flex-wrap:wrap;justify-content:center;width:auto;max-width:100%;gap:.4rem 0}
+  .partners-rails{-webkit-mask-image:none;mask-image:none;overflow:visible;padding:0 1.5rem}
+  .partners-set{flex-wrap:wrap;justify-content:center;padding-right:0;gap:1.4rem 1.8rem}
+  .partners-set + .partners-set{display:none}
 }
 
 /* ====================== WhatsApp ====================== */
@@ -1952,8 +2000,8 @@ body.pre-active{overflow:hidden}
             <span class="olist-feat-brand"><img src="brand/logo olist 01.png" alt="Olist" width="1021" height="569"></span>
             <span class="olist-feat-kicker">Olist ERP organiza. A Atlas faz funcionar.</span>
           </p>
-          <h2 class="olist-feat-title olist-feat-anim"><span>Contratar é só o começo.</span> <span>Fazer funcionar é com a Atlas.</span></h2>
-          <p class="olist-feat-sub olist-feat-anim">Configuramos o ERP para sua operação, treinamos sua equipe e acompanhamos cada etapa da implementação.</p>
+          <h2 class="olist-feat-title olist-feat-anim"><span>Contratar o sistema é só o começo.</span> <span>Fazer sua operação funcionar com ele é o nosso trabalho.</span></h2>
+          <p class="olist-feat-sub olist-feat-anim">A gente entende de operação. Por isso, implementamos o Olist ERP de acordo com os processos da sua empresa, configuramos as rotinas, treinamos sua equipe e oferecemos suporte dedicado durante a implantação.</p>
           <a class="btn olist-feat-cta olist-feat-anim" href="#contato" data-service="Implementação Olist ERP">Quero implementar o Olist ERP <span class="arw">→</span></a>
         </div>
       </div>
@@ -2122,24 +2170,6 @@ body.pre-active{overflow:hidden}
     </div>
   </section>
 
-  <!-- ============ Positioning ============ -->
-  <section class="section territorio seam seam-in" id="territorio" data-nav-theme="light">
-    <div class="container">
-      <p class="eyebrow reveal-blk" style="justify-content:center;display:inline-flex">EMPRESAS QUE CONFIAM NA ATLAS</p>
-      <h2 class="h2" data-letters>Mais de 250 empresas já escolheram a Atlas para apoiar seus negócios no varejo digital.</h2>
-      <p class="lede reveal-blk">Marcas de diferentes segmentos e portes confiam em nossa equipe para enfrentar desafios, organizar prioridades e avançar com mais clareza.</p>
-    </div>
-    <div class="channel-rails">
-      <p class="sr-only">Marcas atendidas pela Atlas, em duas fileiras de logotipos em movimento.</p>
-      <div class="channel-rail channel-rail-a" aria-hidden="true">
-        <div class="channel-track" id="channelTrackA"></div>
-      </div>
-      <div class="channel-rail channel-rail-b" aria-hidden="true">
-        <div class="channel-track" id="channelTrackB"></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ Project visibility ============ -->
   <section class="section acompanha seam seam-in" id="acompanhamento" data-nav-theme="light">
     <div class="container">
@@ -2233,6 +2263,24 @@ body.pre-active{overflow:hidden}
     </div>
   </section>
 
+  <!-- ============ Positioning ============ -->
+  <section class="section territorio seam seam-in" id="territorio" data-nav-theme="light">
+    <div class="container">
+      <p class="eyebrow reveal-blk" style="justify-content:center;display:inline-flex">EMPRESAS QUE CONFIAM NA ATLAS</p>
+      <h2 class="h2" data-letters>Mais de 250 empresas já escolheram a Atlas para apoiar seus negócios no varejo digital.</h2>
+      <p class="lede reveal-blk">Marcas de diferentes segmentos e portes confiam em nossa equipe para enfrentar desafios, organizar prioridades e avançar com mais clareza.</p>
+    </div>
+    <div class="channel-rails">
+      <p class="sr-only">Marcas atendidas pela Atlas, em duas fileiras de logotipos em movimento.</p>
+      <div class="channel-rail channel-rail-a" aria-hidden="true">
+        <div class="channel-track" id="channelTrackA"></div>
+      </div>
+      <div class="channel-rail channel-rail-b" aria-hidden="true">
+        <div class="channel-track" id="channelTrackB"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ Benefício exclusivo Atlas ============ -->
   <section class="section beneficio seam seam-in" id="beneficio" data-nav-theme="dark">
     <div class="container">
@@ -2271,7 +2319,8 @@ body.pre-active{overflow:hidden}
       <div class="container">
         <div class="contact-head">
           <p class="eyebrow">CONTATO</p>
-          <h2 class="h2" data-letters>Vamos encontrar o próximo passo para a sua operação.</h2>
+          <h2 class="h2" data-letters>Quero implementar o Olist ERP</h2>
+          <p class="lede">Nosso time de especialistas entrará em contato para entender sua operação e orientar os próximos passos.</p>
         </div>
         <form class="form" id="contactForm" novalidate>
           <div class="form-row">
@@ -2287,8 +2336,8 @@ body.pre-active{overflow:hidden}
     </section>
 
     <footer class="footer seam-in" id="rodape" data-nav-theme="dark">
+      <canvas class="footer-canvas" id="footerCanvas" aria-hidden="true"></canvas>
       <div class="footer-cta">
-        <canvas class="footer-canvas" id="footerCanvas" aria-hidden="true"></canvas>
         <div class="footer-cta-inner">
           <div class="footer-top">
             <p class="eyebrow on-dark">OUTRAS SOLUÇÕES ATLAS</p>
@@ -2296,6 +2345,17 @@ body.pre-active{overflow:hidden}
           </div>
         </div>
       </div>
+      <section class="partners" id="parceiros" aria-label="Parceiros e integrações">
+        <p class="sr-only">Logotipos de parceiros e integrações da Atlas.</p>
+        <div class="partners-rails">
+          <div class="partners-rail partners-rail-a">
+            <div class="partners-track" id="partnersTrackA"></div>
+          </div>
+          <div class="partners-rail partners-rail-b">
+            <div class="partners-track" id="partnersTrackB"></div>
+          </div>
+        </div>
+      </section>
       <div class="footer-panel">
       <div class="footer-inner">
         <div class="footer-grid">
@@ -2976,6 +3036,65 @@ body.pre-active{overflow:hidden}
       rails.addEventListener("pointerenter",function(){ hovered=true; syncPlay(); });
       rails.addEventListener("pointerleave",function(){ hovered=false; syncPlay(); });
     }
+  })();
+
+  /* ========================================================================
+     Partners / integrations marquee
+     ======================================================================== */
+  (function(){
+    var trackA=document.getElementById("partnersTrackA");
+    var trackB=document.getElementById("partnersTrackB");
+    if(!trackA||!trackB) return;
+    var DIR="brand/logos%20mao%20dupla/";
+    var rowA=[
+      {file:"mercadolivre.png",alt:"Mercado Livre"},
+      {file:"amazon.webp",alt:"Amazon"},
+      {file:"shopee.webp",alt:"Shopee"},
+      {file:"magalu.webp",alt:"Magalu"},
+      {file:"tiktokshop.png",alt:"TikTok Shop",mod:"partners-logo--tiktok",vb:"1% 1.2% 3% 0.4%"},
+      {file:"shopify.png",alt:"Shopify",vb:"0.56% 5.43% 0.56% 5.29%"},
+      {file:"nuvemshop.png",alt:"Nuvemshop",vb:"22.69% 5.23% 22.94% 5.16%"},
+      {file:"Yampi.webp",alt:"Yampi",mod:"partners-logo--yampi",vb:"20.1% 5.86% 20.1% 4.98%"},
+      {file:"base.png",alt:"Base",vb:"37.89% 11.33% 37.89% 11.33%"}
+    ];
+    var rowB=[
+      {file:"olist.png",alt:"Olist"},
+      {file:"intelipost.svg",alt:"Intelipost"},
+      {file:"frenet.png",alt:"Frenet",vb:"36.47% 8.14% 36.47% 8.14%"},
+      {file:"mandae.png",alt:"Mandaê",vb:"2.6% 0% 0.78% 0%"},
+      {file:"sisfrete.png",alt:"Sisfrete",vb:"14% 7.25% 14% 7.17%"},
+      {file:"mercos.png",alt:"Mercos",vb:"19.54% 3.07% 10.34% 2.45%"},
+      {file:"adman.png",alt:"Adman",vb:"10.45% 18.01% 24.09% 20.62%"},
+      {file:"avantpro.png",alt:"Avantpro",vb:"13.67% 3% 13% 2.13%"},
+      {file:"gfinance.png",alt:"GFinance"},
+      {file:"joompulse.jpeg",alt:"JoomPulse",vb:"27.52% 6.71% 30.87% 9.4%"}
+    ];
+    function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+    function logoHTML(item,hide){
+      var vb=item.vb?' style="object-view-box:inset('+item.vb+')"':'';
+      var mod=item.mod?' '+item.mod:'';
+      return '<button type="button" class="partners-logo'+mod+'"'
+        +(hide?' tabindex="-1" aria-hidden="true"':' aria-label="'+esc(item.alt)+'"')
+        +'><img src="'+DIR+encodeURIComponent(item.file)+'" alt="" width="110" height="22" decoding="async"'+vb+'></button>';
+    }
+    function fillTrack(track,list){
+      var copies=4, html="", i, j, hide, seq;
+      for(i=0;i<copies;i++){
+        hide=i>0; seq="";
+        for(j=0;j<list.length;j++) seq+=logoHTML(list[j],hide);
+        html+='<span class="partners-set"'+(hide?' aria-hidden="true"':'')+'>'+seq+'</span>';
+      }
+      track.innerHTML=html;
+    }
+    fillTrack(trackA,rowA);
+    fillTrack(trackB,rowB);
+    if(RM) return;
+    var sec=document.getElementById("parceiros");
+    var rails=sec&&sec.querySelector(".partners-rails");
+    if(!sec||!rails||!window.IntersectionObserver) return;
+    new IntersectionObserver(function(en){
+      sec.classList.toggle("is-offscreen", !en[0].isIntersecting);
+    },{rootMargin:"80px",threshold:0}).observe(rails);
   })();
 
   /* ========================================================================
