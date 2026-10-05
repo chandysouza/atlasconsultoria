@@ -102,7 +102,10 @@ button{font-family:inherit;cursor:pointer}
 
 /* ====================== Nav ====================== */
 html{scroll-padding-top:74px}
-@media (max-width:767px){html{--nav-h:88px;scroll-padding-top:calc(var(--nav-h) + 10px)}}
+@media (max-width:767px){
+  :root{--nav-h:88px;--section-h2:clamp(25.5px,6.9vw,26.5px)}
+  html{scroll-padding-top:calc(var(--nav-h) + 10px)}
+}
 @media (min-width:768px){html{scroll-padding-top:80px}}
 .nav{--nav-ease:280ms ease;
   position:fixed;top:0;left:0;right:0;z-index:80;display:flex;
@@ -228,11 +231,12 @@ html{scroll-padding-top:74px}
   .nav .nav-cta{display:none}
 }
 @media (max-width:767px){
-  .nav{height:88px;min-height:88px;align-items:center;padding:0 1.15rem}
-  .nav-brand{align-self:center}
+  .nav{height:88px;min-height:88px;align-items:center;justify-content:flex-end;padding:0 1.15rem}
+  .nav .nav-cta{display:none}
+  .nav-brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1}
   .nav-brand img{height:34px}
-  .nav-right{align-self:center}
-  .hamb{height:44px;width:44px;align-self:center}
+  .nav-right{position:relative;z-index:2;margin-left:auto;flex:none}
+  .hamb{height:44px;width:44px}
   .mmenu{padding-top:calc(var(--nav-h) + 16px)}
 }
 
@@ -287,6 +291,9 @@ html{scroll-padding-top:74px}
   .erp-areas,.deliverables{justify-content:center}
   .form,.field{text-align:left;align-items:stretch;width:100%}
   .field label{text-align:left}
+  .section .h2,.olist-feat-title,.erp-msg-title,.opint-title,.footer .h2,.atlas4p .h2,
+  .territorio .h2,.beneficio .h2,.contact .h2{
+    line-height:1.16;overflow-wrap:break-word;word-wrap:break-word;text-wrap:balance;max-width:100%}
 }
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:500;
   letter-spacing:.18em;text-transform:uppercase;color:var(--atlas-mid-blue)}
@@ -511,22 +518,26 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   .hero-actions .btn-primary{min-height:55px;padding:0 26px;font-size:17.6px;white-space:normal;line-height:1.25}
   .hero-visual{min-height:0;width:auto;height:auto;max-width:100%;max-height:100%;
     aspect-ratio:1;justify-self:center;align-self:center;overflow:visible;margin:0 auto}
-  .hero-logo-stack{width:52%;max-width:none}
-  .hero-brands{inset:12% 9% 10% 9%;overflow:visible}
+  .hero-logo-stack{width:57.2%;max-width:none}
+  .hero-brands{inset:10.9% 8.2% 9.1% 8.2%;overflow:visible}
   .hero-brand[data-brand="olist"],
   .hero-brand[data-brand="ml"],
   .hero-brand[data-brand="tiktok"]{display:block}
-  .hero-brand[data-brand="olist"]{--bs:clamp(36px,11.5vw,52px);--bx:20%;--by:15%}
-  .hero-brand[data-brand="ml"]{--bs:clamp(36px,11.5vw,52px);--bx:80%;--by:17%}
-  .hero-brand[data-brand="tiktok"]{--bs:clamp(34px,10.6vw,48px);--bx:50%;--by:5%}
-  .hero-brand[data-brand="shopee"]{--bs:clamp(34px,11vw,50px);--bx:87%;--by:46%}
-  .hero-brand[data-brand="amazon"]{--bs:clamp(34px,11vw,50px);--bx:78%;--by:84%}
-  .hero-brand[data-brand="shopify"]{--bs:clamp(34px,10.6vw,48px);--bx:22%;--by:84%}
-  .hero-brand[data-brand="base"]{--bs:clamp(34px,11vw,50px);--bx:11%;--by:50%}
+  .hero-brand[data-brand="olist"]{--bs:clamp(40px,12.65vw,57px);--bx:20%;--by:15%}
+  .hero-brand[data-brand="ml"]{--bs:clamp(40px,12.65vw,57px);--bx:80%;--by:17%}
+  .hero-brand[data-brand="tiktok"]{--bs:clamp(37px,11.66vw,53px);--bx:50%;--by:5%}
+  .hero-brand[data-brand="shopee"]{--bs:clamp(37px,12.1vw,55px);--bx:87%;--by:46%}
+  .hero-brand[data-brand="amazon"]{--bs:clamp(37px,12.1vw,55px);--bx:78%;--by:84%}
+  .hero-brand[data-brand="shopify"]{--bs:clamp(37px,11.66vw,53px);--bx:22%;--by:84%}
+  .hero-brand[data-brand="base"]{--bs:clamp(37px,12.1vw,55px);--bx:11%;--by:50%}
 }
 @media (max-width:767px) and (max-height:700px){
-  .hero-sub{margin-top:.65rem}
-  .hero-actions{margin-top:.85rem}
+  .atlas-hero-pin .hero-overlay{
+    padding-top:calc(var(--nav-h) + 14px);
+    padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
+  .hero-layout{gap:.28rem}
+  .hero-sub{margin-top:.45rem}
+  .hero-actions{margin-top:.55rem}
 }
 .hero-logo{position:relative;z-index:2;width:100%;height:auto;max-width:100%;
   transform-origin:center center;will-change:transform;backface-visibility:hidden;
@@ -961,7 +972,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   #olist-metodo.erp-method{padding-inline:1.15rem}
   .erp-msg{display:flex;flex-direction:column;align-items:center;text-align:center;margin-inline:auto}
   .erp-msg-eyebrow{justify-content:center;margin-bottom:1.05rem;font-size:.78rem}
-  .erp-msg-title{font-size:clamp(24.5px,6.6vw,28px)}
+  .erp-msg-title{font-size:clamp(27.5px,7.4vw,31.5px);line-height:1.16}
   .erp-msg-lede{margin-inline:auto;font-size:clamp(16px,4.4vw,18px)}
   .erp-areas{justify-content:center;gap:.5rem;margin-top:1.45rem}
   .erp-areas li{font-size:14px;padding:.46rem .86rem}
@@ -1003,6 +1014,11 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   .beneficio-icon{height:34px}
   .beneficio-icon--left{grid-area:l;justify-self:start;align-self:center;margin:0}
   .beneficio-icon--right{grid-area:r;justify-self:end;align-self:center;margin:0}
+  .h2,.olist-feat-title,.opint-title{
+    font-size:var(--section-h2);line-height:1.16;overflow-wrap:break-word;word-wrap:break-word;
+    text-wrap:balance;white-space:normal;max-width:100%}
+  .erp-msg-title{line-height:1.16;overflow-wrap:break-word;word-wrap:break-word;
+    text-wrap:balance;white-space:normal;max-width:100%}
 }
 .beneficio-coupon{display:inline-flex;align-items:center;gap:clamp(1rem,2.4vw,1.9rem);
   margin:clamp(2.4rem,4.2vw,3.2rem) 0 0;padding:.45rem .5rem .45rem clamp(1.3rem,2.8vw,2.4rem);
@@ -1587,6 +1603,11 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 @media (min-width:640px){.atlas4p-node h3{font-size:1.4rem}}
 .atlas4p-node p{font-size:.92rem;line-height:1.55;color:var(--atlas-slate);margin:0;
   transition:color .4s var(--ease),text-shadow .4s var(--ease)}
+@media (max-width:767px){
+  .atlas4p-node{padding:1.4rem 1.3rem 1.3rem}
+  .atlas4p-node h3{font-size:1.42rem;line-height:1.22;overflow-wrap:break-word}
+  .atlas4p-node p{font-size:1.02rem;line-height:1.58;overflow-wrap:break-word}
+}
 .atlas4p-feats{list-style:none;margin:.85rem 0 0;padding:0;display:flex;flex-direction:column;gap:6px;width:100%}
 @media (min-width:1280px){.atlas4p-feats{margin-top:auto;padding-top:.85rem}}
 .atlas4p-feat{display:flex;align-items:center;justify-content:space-between;gap:10px;
