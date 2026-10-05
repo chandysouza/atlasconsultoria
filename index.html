@@ -1603,11 +1603,6 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 @media (min-width:640px){.atlas4p-node h3{font-size:1.4rem}}
 .atlas4p-node p{font-size:.92rem;line-height:1.55;color:var(--atlas-slate);margin:0;
   transition:color .4s var(--ease),text-shadow .4s var(--ease)}
-@media (max-width:767px){
-  .atlas4p-node{padding:1.4rem 1.3rem 1.3rem}
-  .atlas4p-node h3{font-size:1.42rem;line-height:1.22;overflow-wrap:break-word}
-  .atlas4p-node p{font-size:1.02rem;line-height:1.58;overflow-wrap:break-word}
-}
 .atlas4p-feats{list-style:none;margin:.85rem 0 0;padding:0;display:flex;flex-direction:column;gap:6px;width:100%}
 @media (min-width:1280px){.atlas4p-feats{margin-top:auto;padding-top:.85rem}}
 .atlas4p-feat{display:flex;align-items:center;justify-content:space-between;gap:10px;
@@ -1618,6 +1613,19 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .atlas4p-feat span{font-size:.7rem;font-weight:500;line-height:1.2;color:var(--atlas-navy);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
   transition:color .4s var(--ease)}
+@media (max-width:767px){
+  .atlas4p-stage{display:flex;flex-direction:column;gap:1.2rem;align-items:stretch;width:100%}
+  .atlas4p-core{width:100%;margin-bottom:0}
+  .atlas4p-node{
+    width:100%;max-width:100%;height:auto;min-height:0;box-sizing:border-box;
+    padding:1.7rem 1.15rem 1.55rem;overflow:visible}
+  .atlas4p-num{margin:0 0 .9rem}
+  .atlas4p-node h3{font-size:22px;line-height:1.25;margin:0 0 .85rem;overflow-wrap:break-word}
+  .atlas4p-node p{font-size:16px;line-height:1.6;margin:0;overflow-wrap:break-word}
+  .atlas4p-feats{margin-top:1.2rem;padding-top:0;gap:10px;width:100%}
+  .atlas4p-feat{min-height:40px;height:auto;align-items:center;padding:.62rem 12px .62rem 14px}
+  .atlas4p-feat span{font-size:13.5px;line-height:1.35;white-space:normal;overflow:visible;text-overflow:unset}
+}
 .atlas4p-switch{position:relative;flex:0 0 28px;width:28px;height:16px;border-radius:9999px;
   background:rgba(16,23,42,.16);box-shadow:inset 0 0 0 1px rgba(16,23,42,.06);
   transition:background .4s var(--ease)}
