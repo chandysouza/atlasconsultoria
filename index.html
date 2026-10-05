@@ -81,7 +81,7 @@ button{font-family:inherit;cursor:pointer}
 
 /* ====================== Buttons ====================== */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-  border-radius:9999px;padding:.935rem 1.76rem;font-size:.99rem;font-weight:500;
+  border-radius:9999px;padding:1.029rem 1.936rem;font-size:1.089rem;font-weight:500;
   border:1px solid transparent;line-height:1;transition:transform .25s var(--ease),
   background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
 .btn:hover{transform:translateY(-2px)}
@@ -393,10 +393,12 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .hero-sub{margin-top:1.1rem;max-width:min(500px,100%);font-family:"Urania",Arial,sans-serif;font-weight:400;
   font-size:clamp(16px,1.35vw,19px);line-height:1.55;color:rgba(255,255,255,.86)}
 .hero-actions{margin-top:1.5rem;display:flex;align-items:center}
-.hero-actions .btn-primary{min-height:57px;padding:0 29px;font-size:17px;font-weight:500;border-radius:999px;width:auto}
+.hero-actions .btn-primary{min-height:63px;padding:0 33px;font-size:18.7px;font-weight:500;border-radius:999px;width:auto}
 @media (min-width:1024px){.hero-actions{margin-top:1.75rem}
-  .hero-actions .btn-primary{min-height:62px;padding:0 35px;font-size:18.5px}}
-.hero-cta{position:relative;isolation:isolate;overflow:visible;z-index:1}
+  .hero-actions .btn-primary{min-height:68px;padding:0 40px;font-size:20.5px}}
+.hero-cta{position:relative;isolation:isolate;overflow:visible;z-index:1;
+  border:0;background-clip:border-box;
+  box-shadow:0 12px 30px -10px rgba(8,169,230,.6)}
 .hero-cta > *{position:relative;z-index:2}
 .hero-cta::before,.hero-cta::after{
   content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
@@ -418,7 +420,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 }
 .hero-cta:hover{transform:translateY(-2px) scale(1.02);
   background:linear-gradient(135deg,#1ec8f2,#1638d0);
-  box-shadow:0 18px 44px -10px rgba(8,169,230,.75),inset 0 0 0 1px rgba(255,255,255,.22)}
+  box-shadow:0 18px 44px -10px rgba(8,169,230,.75)}
 .hero-cta:hover .arw{transform:translateX(4px)}
 .hero-cta:focus-visible{outline:3px solid var(--ring);outline-offset:4px}
 
@@ -786,8 +788,8 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .erp-areas{list-style:none;margin:1.35rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
 .erp-areas li{margin:0;padding:.42rem .8rem;border-radius:999px;font-size:13px;font-weight:500;line-height:1.2;
   color:#fff;border:1px solid rgba(72,214,208,.34);background:rgba(8,169,230,.1)}
-.erp-msg-cta{margin-top:1.5rem;max-width:100%;white-space:normal;text-align:left;line-height:1.3;
-  background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
+.erp-msg-cta{margin-top:1.5rem;max-width:100%;white-space:nowrap;text-align:left;line-height:1;
+  padding:.72rem 1.45rem;background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
 .erp-msg-cta:hover{background:#004EF4;color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
 .erp-sys{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);
   align-items:center;column-gap:.42rem;min-width:0;width:100%}
@@ -1286,9 +1288,9 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .acompanha-band-text{min-width:0}
 .acompanha-cta{
   flex:none;
-  min-height:53px;
-  padding:0 1.1rem;
-  font-size:16.5px;
+  min-height:58px;
+  padding:0 1.21rem;
+  font-size:18px;
   white-space:normal;
   text-align:center;
   line-height:1.25;
@@ -1301,7 +1303,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
   .acompanha-band{flex-direction:row;align-items:center;justify-content:space-between;
     gap:clamp(1.25rem,2.5vw,2.25rem);padding:.9rem .9rem .9rem clamp(1.25rem,2.2vw,1.75rem)}
   .acompanha-band-text{flex:1 1 auto}
-  .acompanha-cta{padding:0 1.76rem;white-space:nowrap}
+  .acompanha-cta{padding:0 1.936rem;white-space:nowrap}
 }
 .acompanha-band p{margin:0}
 .acompanha-band-title{
@@ -1486,7 +1488,7 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .atlas4p-stage.is-flv-open .atlas4p-node{filter:blur(6px) opacity(.4);transform:scale(var(--flv-ns,1))}
 @media (max-width:1279px){
   .atlas4p-banner{width:min(100%,400px)}
-  .atlas4p-core .btn{white-space:normal;height:auto;padding:.935rem 1.265rem;line-height:1.3;text-align:center}
+  .atlas4p-core .btn{white-space:normal;height:auto;padding:1.029rem 1.392rem;line-height:1.3;text-align:center}
 }
 .atlas4p-node{display:flex;flex-direction:column;padding:1.3rem 1.25rem 1.2rem;min-height:11.5rem;
   transition:border-color .42s var(--ease),box-shadow .42s var(--ease),filter .52s var(--ease)}
@@ -1627,6 +1629,10 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .field textarea{min-height:8rem;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--atlas-blue)}
 .form-submit{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:.5rem}
+.form-submit .btn{border:0;background-clip:border-box;
+  padding:calc(1.029rem + 1px) calc(1.936rem + 1px);
+  box-shadow:0 12px 30px -10px rgba(8,169,230,.6)}
+.form-submit .btn:hover{box-shadow:0 18px 44px -10px rgba(8,169,230,.75)}
 .status{min-height:1.25rem;font-size:.9rem;color:var(--atlas-blue);font-weight:500}
 
 /* ====================== Footer: navy CTA + white panel ====================== */
@@ -1971,7 +1977,7 @@ body.pre-active{overflow:hidden}
             <li>Rotinas operacionais</li>
             <li>Migração de sistema</li>
           </ul>
-          <a class="btn btn-primary erp-msg-cta" href="#contato" data-service="Implementação Olist ERP">Quero estruturar minha operação no Olist ERP <span class="arw">→</span></a>
+          <a class="btn btn-primary erp-msg-cta" href="#contato" data-service="Implementação Olist ERP">Quero estruturar minha operação no Olist <span class="arw">→</span></a>
         </div>
         <div class="erp-sys" id="erpSys">
           <svg class="erp-sys-svg" id="erpSysSvg" aria-hidden="true">
@@ -2072,7 +2078,7 @@ body.pre-active{overflow:hidden}
             <figure class="atlas4p-banner" id="flavioTrigger" tabindex="0" role="button" aria-expanded="false" aria-controls="flavioExpand" aria-label="Ampliar cartão: Flávio Izac, gestor Atlas. Consultoria certificada Atlas, parceira Diamante Olist.">
               <img class="flv-portrait" src="brand/cardflavio.png?v=20260928-1937" alt="" width="800" height="1200" decoding="async">
             </figure>
-            <img class="flv-expand" id="flavioExpand" src="brand/cardflavioexpandido.png?v=20260928-1939" alt="Flávio Izac. Sua implementação com uma consultoria certificada pela Olist. A Atlas é Parceiro Diamante Olist. Unimos conhecimento do sistema à experiência de quem entende a rotina do varejo digital para configurar o ERP, preparar sua equipe e apoiar a implementação." width="1920" height="1080" decoding="async">
+            <img class="flv-expand" id="flavioExpand" src="brand/cardflavioexpandido.png?v=20261005-1211" alt="Flávio Izac. Sua implementação com uma consultoria certificada pela Olist. A Atlas é Parceiro Diamante Olist. Unimos conhecimento do sistema à experiência de quem entende a rotina do varejo digital para configurar o ERP, preparar sua equipe e apoiar a implementação." width="1920" height="1080" decoding="async">
           </div>
           <a class="btn btn-dark" href="#contato" data-service="Implementação Olist ERP">Quero conhecer a implementação Atlas</a>
         </article>
