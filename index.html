@@ -1076,6 +1076,51 @@ body:not(.no-webgl) .atlas-navy-wash{display:none}
 .beneficio-foot .btn{background:#fff;color:var(--atlas-navy);box-shadow:0 12px 30px -12px rgba(0,0,0,.45);
   transition:transform .25s var(--ease),background-color .3s ease,color .3s ease}
 .beneficio-foot .btn:hover{background:#004EF4;color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.45);transform:none}
+/* ---- Benefício modern refresh: coupon ticket + copy, icon tiles, gradient values, glowing plus ---- */
+.beneficio-coupon{position:relative;gap:clamp(.7rem,1.6vw,1.1rem);padding:.5rem .5rem .5rem clamp(1.2rem,2.4vw,1.8rem);
+  border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 18px 40px -18px rgba(8,169,230,.55)}
+.beneficio-coupon-label{font-size:clamp(12px,1.1vw,14px);font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.72)}
+.beneficio-coupon-code{position:relative;overflow:hidden;min-width:0;padding:.42em 1.1em;letter-spacing:.16em;
+  background:linear-gradient(120deg,#0C2BBF 0%,#1460D6 55%,#08A9E6 100%);
+  outline:1.5px dashed rgba(255,255,255,.55);outline-offset:-6px;
+  box-shadow:0 8px 24px -8px rgba(8,169,230,.7)}
+.beneficio-coupon-code::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+  transform:translateX(-120%);animation:bnfShine 3.6s var(--ease) 1.2s infinite}
+@keyframes bnfShine{0%{transform:translateX(-120%)}45%,100%{transform:translateX(120%)}}
+.beneficio-copy{display:inline-flex;align-items:center;gap:.45rem;height:clamp(40px,3.6vw,50px);padding:0 1.05rem;
+  border:0;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;font-weight:700;color:var(--atlas-navy);
+  background:#fff;transition:background .25s ease,color .25s ease,transform .2s var(--ease)}
+.beneficio-copy svg{width:17px;height:17px}
+.beneficio-copy:hover{background:var(--atlas-teal)}
+.beneficio-copy:active{transform:scale(.96)}
+.beneficio-copy:focus-visible{outline:2px solid var(--atlas-teal);outline-offset:3px}
+.beneficio-copy.is-copied{background:var(--atlas-teal);color:var(--atlas-navy)}
+.beneficio-ico{position:absolute;top:clamp(1.2rem,2.2vw,1.7rem);right:clamp(1.2rem,2.2vw,1.7rem);display:grid;place-items:center;
+  width:48px;height:48px;border-radius:15px;color:#fff;
+  background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 10px 24px -10px rgba(0,0,0,.5);
+  transition:transform .5s var(--ease)}
+.beneficio-card--atlas .beneficio-ico{color:var(--atlas-teal);box-shadow:inset 0 0 0 1px rgba(72,214,208,.35),0 10px 24px -10px rgba(0,0,0,.5)}
+.beneficio-ico svg{width:24px;height:24px}
+.beneficio-card .beneficio-tag{padding-right:56px}
+.beneficio-value{background:linear-gradient(100deg,#fff 0%,#CFEFFF 60%,#8FDcFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.beneficio-card--atlas .beneficio-value{background-image:linear-gradient(100deg,#fff 0%,#9FF0EA 55%,#48D6D0 100%)}
+.beneficio-plus{position:relative;z-index:1;background:linear-gradient(145deg,#7FF2EA,#48D6D0 50%,#08A9E6);
+  box-shadow:0 0 0 6px rgba(72,214,208,.14),0 0 30px rgba(72,214,208,.45)}
+.beneficio-plus::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(72,214,208,.5);
+  animation:bnfPulse 2.4s ease-out infinite}
+@keyframes bnfPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+@media (hover:hover) and (pointer:fine){ .beneficio-card:hover .beneficio-ico{transform:translateY(-3px) rotate(-6deg)} }
+@media (max-width:520px){
+  .beneficio-coupon{flex-wrap:wrap;justify-content:center;padding:.6rem;border-radius:22px;row-gap:.5rem}
+  .beneficio-coupon-label{width:100%;text-align:center;padding-top:.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .beneficio-coupon-code::after,.beneficio-plus::before{animation:none;display:none}
+}
 
 /* ====================== Project visibility — notebook + stepper ====================== */
 .acompanha{background:var(--atlas-light);color:var(--atlas-ink);overflow-x:clip}
@@ -1902,6 +1947,60 @@ body:not(.no-webgl) .footer-cta{background:transparent}
     flex-direction:column;align-items:center;text-align:center;gap:.5rem}
   .footer-bottom span{display:block;max-width:22rem;overflow-wrap:break-word;word-wrap:break-word}
 }
+/* ---- Footer modern refresh: centered brand + pills, link columns, bottom bar ---- */
+.fx-brand{display:flex;flex-direction:column;align-items:center;text-align:center}
+.fx-brand img{display:block;height:clamp(40px,4vw,52px);width:auto;max-width:100%}
+.fx-brand p{margin:1rem auto 0;max-width:52ch;font-size:.95rem;line-height:1.6;color:var(--atlas-slate,#4A5578)}
+.fx-pills{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:1.6rem;flex-wrap:nowrap}
+.fx-pill{position:relative;display:block;height:30px;border-radius:999px;flex:none}
+.fx-pill i{position:absolute;top:2px;width:26px;height:26px;border-radius:50%;
+  border:1.5px solid rgba(6,20,79,.55);animation:fxKnob 5.5s var(--ease) infinite alternate}
+.fx-pill--teal{width:126px;background:linear-gradient(90deg,#9FF0EA,#48D6D0 55%,#08A9E6)}
+.fx-pill--teal i{left:44px;background:rgba(255,255,255,.25)}
+.fx-pill--mid{width:52px;background:#1769B0}
+.fx-pill--line{width:62px;border:1.5px solid #06144F;background:#fff}
+.fx-pill--line i{left:28px;top:1px;border:0;background:#08A9E6;animation-delay:-2s}
+.fx-dot{width:30px;height:30px;border-radius:50%;background:#48D6D0;flex:none}
+.fx-pill--navy{width:52px;background:#06144F}
+.fx-pill--blue{width:126px;background:linear-gradient(90deg,#0C2BBF,#1460D6)}
+.fx-pill--blue i{right:12px;border-color:rgba(255,255,255,.6);background:rgba(6,20,79,.35);animation-delay:-3.5s}
+@keyframes fxKnob{0%,30%{transform:translateX(0)}70%,100%{transform:translateX(-14px)}}
+.fx-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem 3rem;
+  max-width:860px;margin:clamp(2.6rem,4.4vw,3.6rem) auto 0}
+.fx-col h4{margin:0 0 1rem;font-size:.92rem;font-weight:700;letter-spacing:-.01em;text-transform:none;color:var(--atlas-navy)}
+.fx-col a,.fx-col address{display:block;width:fit-content;font-size:.9rem;font-style:normal;line-height:1.5;
+  color:var(--atlas-mid-blue);margin:0 0 .7rem;transition:color .2s var(--ease)}
+.fx-col a{position:relative}
+.fx-col a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.fx-col a:hover{color:var(--atlas-blue)}
+.fx-col a:hover::after{transform:scaleX(1)}
+.fx-col a:focus-visible{outline:2px solid var(--atlas-blue);outline-offset:3px;border-radius:4px}
+.fx-col address{max-width:26ch;margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(6,20,79,.1);
+  color:var(--atlas-slate,#4A5578);font-size:.82rem}
+.fx-bottom{display:flex;align-items:center;justify-content:space-between;gap:1.25rem 2rem;flex-wrap:wrap;
+  margin-top:clamp(2.6rem,4.4vw,3.4rem);padding-top:1.6rem;border-top:1px solid rgba(6,20,79,.1)}
+.fx-social{display:flex;gap:.6rem}
+.fx-social a{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;color:#fff;background:var(--atlas-navy);
+  transition:background .25s ease,transform .25s var(--ease)}
+.fx-social a:hover{background:var(--atlas-blue);transform:translateY(-2px)}
+.fx-social a:focus-visible{outline:2px solid var(--atlas-blue);outline-offset:3px}
+.fx-social svg{width:18px;height:18px}
+.fx-legal{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;font-size:.8rem;color:var(--atlas-navy);margin-left:auto}
+.fx-top{display:inline-flex;align-items:center;gap:.4rem;height:38px;padding:0 1rem;border-radius:999px;
+  font-size:.8rem;font-weight:600;color:var(--atlas-navy);border:1px solid rgba(6,20,79,.16);
+  transition:background .25s ease,color .25s ease,border-color .25s ease}
+.fx-top:hover{background:var(--atlas-navy);color:#fff;border-color:var(--atlas-navy)}
+.fx-top:focus-visible{outline:2px solid var(--atlas-blue);outline-offset:3px}
+@media (max-width:767px){
+  .fx-pills{gap:6px;transform:scale(.66);margin:.6rem 0 -.3rem}
+  .fx-cols{grid-template-columns:1fr;text-align:center;gap:2rem}
+  .fx-col a,.fx-col address{margin-inline:auto}
+  .fx-bottom{flex-direction:column;justify-content:center;text-align:center}
+  .fx-legal{margin:0;flex-direction:column;align-items:center}
+}
+@media (min-width:768px) and (max-width:1023px){ .fx-cols{gap:2rem} }
+@media (prefers-reduced-motion:reduce){ .fx-pill i{animation:none} }
 
 /* ====================== Preloader ====================== */
 .preloader{position:fixed;inset:0;z-index:100;overflow:hidden;background:var(--atlas-navy);color:#fff}
@@ -2474,17 +2573,19 @@ body.pre-active{overflow:hidden}
           <h2 class="h2" data-letters>Contrate o Olist ERP com 30 dias grátis + a melhor condição comercial disponível no mercado.</h2>
           <img class="beneficio-icon beneficio-icon--right reveal-blk" src="brand/olistdesktop2.svg" alt="" width="47" height="48" aria-hidden="true">
         </div>
-        <p class="beneficio-coupon reveal-blk"><span class="beneficio-coupon-label">Cupom:</span> <span class="beneficio-coupon-code">ATLAS</span></p>
+        <div class="beneficio-coupon reveal-blk"><span class="beneficio-coupon-label">Cupom</span><span class="beneficio-coupon-code">ATLAS</span><button type="button" class="beneficio-copy" data-copy="ATLAS" aria-label="Copiar cupom ATLAS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><span class="beneficio-copy-txt" aria-live="polite">Copiar</span></button></div>
         <p class="lede reveal-blk">Use o cupom da Atlas para acessar essa condição na assinatura do sistema. E, ao escolher nossa equipe para fazer a implementação, receba também 10% de desconto no serviço da Atlas.</p>
       </div>
       <div class="beneficio-grid reveal-blk">
         <article class="beneficio-card beneficio-card--olist">
+          <span class="beneficio-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v7.5h14V12M12 8v11.5"/><path d="M12 8C10.5 5 7 4.6 7 6.4 7 8 12 8 12 8zM12 8c1.5-3 5-3.4 5-1.6C17 8 12 8 12 8z"/></svg></span>
           <p class="beneficio-tag"><img src="brand/olist.svg" alt="" width="80" height="39">Assinatura Olist ERP</p>
           <p class="beneficio-value">30 dias grátis</p>
           <p class="beneficio-desc">+ a melhor condição comercial disponível no mercado, com o cupom da Atlas.</p>
         </article>
         <span class="beneficio-plus" aria-hidden="true">+</span>
         <article class="beneficio-card beneficio-card--atlas">
+          <span class="beneficio-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span>
           <p class="beneficio-tag">Implementação Atlas</p>
           <p class="beneficio-value">10% de desconto</p>
           <p class="beneficio-desc">no serviço da Atlas, ao escolher nossa equipe para fazer a implementação.</p>
@@ -2541,19 +2642,28 @@ body.pre-active{overflow:hidden}
       </section>
       <div class="footer-panel">
       <div class="footer-inner">
-        <div class="footer-grid">
-          <div class="footer-brand foot-col">
-            <img src="brand/logo_atlas.png" alt="Atlas Consultoria Digital" />
-            <p>Consultoria especializada em varejo digital. Serviços independentes para marketplaces e e-commerce.</p>
+        <div class="fx-brand">
+          <img src="brand/logo_atlas.png" alt="Atlas Consultoria Digital" />
+          <p>Consultoria especializada em varejo digital. Serviços independentes para marketplaces e e-commerce.</p>
+          <div class="fx-pills" aria-hidden="true">
+            <span class="fx-pill fx-pill--teal"><i></i></span>
+            <span class="fx-pill fx-pill--mid"></span>
+            <span class="fx-pill fx-pill--line"><i></i></span>
+            <span class="fx-dot"></span>
+            <span class="fx-pill fx-pill--navy"></span>
+            <span class="fx-pill fx-pill--blue"><i></i></span>
           </div>
-          <div class="foot-col">
+        </div>
+        <nav class="fx-cols" aria-label="Links do rodapé">
+          <div class="fx-col">
             <h4>Navegação</h4>
-            <a href="#top">Voltar ao topo</a>
             <a href="#territorio">Sobre a Atlas</a>
             <a href="#como-fazemos">Nosso Método</a>
+            <a href="#acompanhamento">Acompanhamento</a>
+            <a href="#beneficio">Benefício exclusivo</a>
             <a href="#contato">Contato</a>
           </div>
-          <div class="foot-col">
+          <div class="fx-col">
             <h4>Serviços</h4>
             <a href="#implementacao-olist">Implementação Olist ERP</a>
             <a href="#contato">Implementação Base HUB</a>
@@ -2561,24 +2671,32 @@ body.pre-active{overflow:hidden}
             <a href="#contato">Gestão de Anúncios</a>
             <a href="#contato">Mentoria Estratégica</a>
           </div>
-          <div class="foot-col">
-            <h4>Contato</h4>
+          <div class="fx-col">
+            <h4>Atendimento</h4>
             <!-- VALIDATION: substituir por dados oficiais antes de publicar -->
-            <a href="#contato">Fale com um especialista</a>
+            <a href="https://wa.me/31971685697" target="_blank" rel="noopener noreferrer">Fale com um especialista</a>
+            <a href="mailto:comercial@atlasconsultoriadigital.com.br">Enviar e-mail</a>
+            <a href="#contato">Formulário de contato</a>
             <address>Atendimento a operações de varejo digital em marketplaces e e-commerce.</address>
-            <div class="foot-social">
-              <a href="https://www.instagram.com/atlasconsultoriadigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Atlas">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>
-              </a>
-              <a href="mailto:comercial@atlasconsultoriadigital.com.br" aria-label="Enviar e-mail para a Atlas">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 5.5 8-5.5"/></svg>
-              </a>
-            </div>
           </div>
-        </div>
-        <div class="footer-bottom">
-          <span>© <span id="year"></span> Atlas Consultoria Digital.</span>
-          <span>Marketplaces &amp; E-commerce · Varejo Digital</span>
+        </nav>
+        <div class="fx-bottom">
+          <div class="fx-social">
+            <a href="https://www.instagram.com/atlasconsultoriadigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Atlas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>
+            </a>
+            <a href="https://wa.me/31971685697" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Atlas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.6z"/><path d="M9.2 9.2c.3 2.4 2 4.3 4.6 5l1-1.1 1.6.8c-.2.9-1 1.4-1.9 1.3-3.2-.5-5.5-2.9-5.8-6 0-.9.5-1.6 1.3-1.8l.8 1.6z" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="mailto:comercial@atlasconsultoriadigital.com.br" aria-label="Enviar e-mail para a Atlas">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 5.5 8-5.5"/></svg>
+            </a>
+          </div>
+          <div class="fx-legal">
+            <span>© <span id="year"></span> Atlas Consultoria Digital.</span>
+            <span>Marketplaces &amp; E-commerce · Varejo Digital</span>
+          </div>
+          <a class="fx-top" href="#top">Voltar ao topo <span aria-hidden="true">↑</span></a>
         </div>
       </div>
       </div>
@@ -4587,6 +4705,24 @@ body.pre-active{overflow:hidden}
     document.addEventListener("visibilitychange",syncPlay);
     if(RM) layer.classList.add("is-paused");
   }
+
+  /* Benefício: copy coupon code */
+  Array.prototype.forEach.call(document.querySelectorAll(".beneficio-copy"),function(btn){
+    var txt=btn.querySelector(".beneficio-copy-txt"), t=null;
+    btn.addEventListener("click",function(){
+      var code=btn.getAttribute("data-copy")||"";
+      function done(){
+        btn.classList.add("is-copied"); if(txt) txt.textContent="Copiado!";
+        clearTimeout(t); t=setTimeout(function(){ btn.classList.remove("is-copied"); if(txt) txt.textContent="Copiar"; },2000);
+      }
+      function fallback(){
+        var ta=document.createElement("textarea"); ta.value=code; ta.setAttribute("readonly","");
+        ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand("copy"); }catch(e){} document.body.removeChild(ta); done();
+      }
+      if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(code).then(done,fallback); } else fallback();
+    });
+  });
 
   initHeroScene();
   initHeroLogo();
